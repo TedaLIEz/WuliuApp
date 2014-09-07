@@ -1,0 +1,13 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.aicre.wuliuapp.app.MainActivity" >
+
+
+    <item android:id="@+id/search_bar"
+        android:title="@string/action_search"
+        android:orderInCategory="1"
+        app:showAsAction="always"
+        android:icon="@android:drawable/ic_menu_search"/>
+
+</menu>

@@ -1,0 +1,340 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.aicre.wuliuapp.app.activity.DetailActivity">
+
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1">
+
+        <TextView
+            android:id="@+id/start_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="起点"
+            android:textColor="@color/text_color"
+            android:textSize="@dimen/big_text" />
+
+        <TextView
+            android:id="@+id/start_detail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/detail_text"
+            android:layout_marginTop="@dimen/detail_text_margin_top"
+            android:textSize="@dimen/big_text"
+            android:layout_toRightOf="@id/start_title"
+            android:text="@string/none_string"
+            android:textColor="@color/_black" />
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:layout_weight="1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/finish_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="终点"
+            android:textColor="@color/text_color"
+            android:textSize="@dimen/big_text" />
+
+        <TextView
+            android:id="@+id/finish_detail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/detail_text"
+            android:layout_marginTop="@dimen/detail_text_margin_top"
+            android:layout_toRightOf="@id/finish_title"
+            android:text="@string/none_string"
+            android:textSize="@dimen/big_text"
+            android:textColor="@color/_black" />
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:layout_weight="1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/name_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="姓名:"
+            android:textColor="@color/text_color"
+            android:textSize="@dimen/big_text" />
+
+        <TextView
+            android:id="@+id/name_detail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/big_text"
+            android:layout_marginLeft="@dimen/detail_text"
+            android:layout_marginTop="@dimen/detail_text_margin_top"
+            android:layout_toRightOf="@id/name_title"
+            android:text="@string/none_string"
+            android:textColor="@color/_black" />
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:layout_weight="1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/phone_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="电话:"
+            android:textColor="@color/text_color"
+            android:textSize="@dimen/big_text" />
+
+        <TextView
+            android:id="@+id/phone_detail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/detail_text"
+            android:layout_marginTop="@dimen/detail_text_margin_top"
+            android:layout_toRightOf="@id/phone_title"
+            android:textSize="@dimen/big_text"
+            android:text="@string/none_string"
+            android:textColor="@color/_black" />
+    </RelativeLayout>
+
+
+
+    <RelativeLayout
+        android:layout_weight="1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/kind_cargo_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="品名:"
+            android:textColor="@color/text_color"
+            android:textSize="@dimen/big_text" />
+
+        <TextView
+            android:id="@+id/kind_cargo_detail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/big_text"
+            android:layout_marginLeft="@dimen/detail_text"
+            android:layout_marginTop="@dimen/detail_text_margin_top"
+            android:layout_toRightOf="@id/kind_cargo_title"
+            android:text="@string/none_string"
+            android:textColor="@color/_black" />
+    </RelativeLayout>
+
+
+
+    <RelativeLayout
+        android:layout_weight="1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/type_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="类别:"
+            android:textColor="@color/text_color"
+            android:textSize="@dimen/big_text" />
+
+        <TextView
+            android:id="@+id/type_detail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/big_text"
+            android:layout_marginLeft="@dimen/detail_text"
+            android:layout_marginTop="@dimen/detail_text_margin_top"
+            android:layout_toRightOf="@id/type_title"
+            android:text="@string/none_string"
+            android:textColor="@color/_black" />
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:layout_weight="1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/length_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="车长:"
+            android:textColor="@color/text_color"
+            android:textSize="@dimen/big_text" />
+
+        <TextView
+            android:id="@+id/length_detail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/detail_text"
+            android:layout_marginTop="@dimen/detail_text_margin_top"
+            android:layout_toRightOf="@id/length_title"
+            android:text="@string/none_string"
+            android:textSize="@dimen/big_text"
+            android:textColor="@color/_black" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_weight="1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/weight_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="载重:"
+            android:textColor="@color/text_color"
+            android:textSize="@dimen/big_text" />
+
+        <TextView
+            android:id="@+id/weight_detail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/big_text"
+            android:layout_marginLeft="@dimen/detail_text"
+            android:layout_marginTop="@dimen/detail_text_margin_top"
+            android:layout_toRightOf="@id/weight_title"
+            android:text="@string/none_string"
+            android:textColor="@color/_black" />
+
+    </RelativeLayout>
+
+
+
+<!--    <RelativeLayout
+        android:layout_weight="1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/means_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:text="方式:"
+            android:textColor="@color/text_color"
+            android:textSize="@dimen/big_text" />
+
+        <TextView
+            android:id="@+id/means_detail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/big_text"
+            android:layout_marginLeft="@dimen/detail_text"
+            android:layout_marginTop="@dimen/detail_text_margin_top"
+            android:layout_toRightOf="@id/means_title"
+            android:text="@string/none_string"
+            android:textColor="@color/_black" />
+    </RelativeLayout>-->
+
+    <RelativeLayout
+        android:layout_weight="1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/type_car_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="车型:"
+            android:textColor="@color/text_color"
+            android:textSize="@dimen/big_text" />
+
+        <TextView
+            android:id="@+id/type_car_detail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/detail_text"
+            android:layout_marginTop="@dimen/detail_text_margin_top"
+            android:textSize="@dimen/big_text"
+            android:layout_toRightOf="@id/type_car_title"
+            android:text="@string/none_string"
+            android:textColor="@color/_black" />
+    </RelativeLayout>
+
+
+<!--    <RelativeLayout
+        android:layout_weight="1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/price_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="价钱:"
+            android:textColor="@color/text_color"
+            android:textSize="@dimen/big_text" />
+
+        <TextView
+            android:id="@+id/price_detail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/big_text"
+            android:layout_marginLeft="@dimen/detail_text"
+            android:layout_marginTop="@dimen/detail_text_margin_top"
+            android:layout_toRightOf="@id/price_title"
+            android:text="@string/none_string"
+            android:textColor="@color/_black" />
+    </RelativeLayout>-->
+
+
+    <RelativeLayout
+        android:layout_weight="1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/deadline_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="时限:"
+            android:textColor="@color/text_color"
+            android:textSize="@dimen/big_text" />
+
+        <TextView
+            android:id="@+id/deadline_detail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/big_text"
+            android:layout_marginLeft="@dimen/detail_text"
+            android:layout_marginTop="@dimen/detail_text_margin_top"
+            android:layout_toRightOf="@id/deadline_title"
+            android:text="@string/none_string"
+            android:textColor="@color/_black" />
+
+
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/dialBtn"
+        android:layout_weight="1"
+        android:layout_width="150dp"
+        android:layout_height="30dp"
+        android:layout_gravity="center"
+        android:background="@color/text_color"
+        android:textSize="@dimen/big_text"
+        android:text="拨打"
+        android:textColor="@color/white" />
+</LinearLayout>

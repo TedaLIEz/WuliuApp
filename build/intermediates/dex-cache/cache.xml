@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<pre-dex-items>
+
+    <item
+        dex="/home/wei/project/WuliuApp/app/build/intermediates/pre-dexed/debug/support-v4-19.1.0-223c45234547041c0a74274f2df01e005b53966b.jar"
+        jar="/home/wei/sdk/extras/android/m2repository/com/android/support/support-v4/19.1.0/support-v4-19.1.0.jar"
+        jumboMode="false"
+        revision="19.1.0"
+        sha1="85f201b380937e61a9dce6ca90ccf6872abbfb67"/>
+    <item
+        dex="/home/wei/project/WuliuApp/app/build/intermediates/pre-dexed/debug/armeabi-31d965c3ff24929264762f8d2a3c5c4677389423.jar"
+        jar="/home/wei/project/WuliuApp/app/libs/armeabi.jar"
+        jumboMode="false"
+        revision="19.1.0"
+        sha1="e2eaf479cd54a083590a049112973e0e8aa1f169"/>
+    <item
+        dex="/home/wei/project/WuliuApp/app/build/intermediates/pre-dexed/debug/locSDK_4.2-09ce17212085bfdb62025e0309c32ea46c7fbec9.jar"
+        jar="/home/wei/project/WuliuApp/app/libs/locSDK_4.2.jar"
+        jumboMode="false"
+        revision="19.1.0"
+        sha1="41b93335a2753c93f8b8f56741615cb81ea72437"/>
+    <item
+        dex="/home/wei/project/WuliuApp/app/build/intermediates/pre-dexed/debug/classes-6b3ef81462a4e2486a594f28b0cefbeae381697d.jar"
+        jar="/home/wei/project/WuliuApp/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/19.1.0/classes.jar"
+        jumboMode="false"
+        revision="19.1.0"
+        sha1="3499ceba05ca1f6037c6a2fad73df8f636224a28"/>
+    <item
+        dex="/home/wei/project/WuliuApp/app/build/intermediates/pre-dexed/debug/volley-b972a1dd509f18b5f5036ddde75127b9af71d02b.jar"
+        jar="/home/wei/project/WuliuApp/app/libs/volley.jar"
+        jumboMode="false"
+        revision="19.1.0"
+        sha1="c3a7127079ec88fd22c96c4ccadfec2fd3d28998"/>
+
+</pre-dex-items>

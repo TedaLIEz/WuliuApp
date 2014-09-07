@@ -1,0 +1,52 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.aicre.wuliuapp.app.activity.LoginActivity">
+
+    <EditText
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/account"
+        android:hint="请输入账号"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="69dp" />
+
+    <EditText
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/password"
+        android:layout_marginTop="31dp"
+        android:hint="password"
+        android:inputType="textPassword"
+        android:layout_below="@+id/account"
+        android:layout_alignLeft="@+id/account"
+        android:layout_alignStart="@+id/account" />
+
+    <Button
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:text="登入"
+        android:background="@color/text_color"
+        android:textColor="@color/white"
+        android:id="@+id/loginBtn"
+        android:layout_below="@+id/password"
+        android:layout_alignLeft="@+id/password"
+        android:layout_alignStart="@+id/password"
+        android:layout_marginTop="31dp" />
+
+    <Button
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:text="注册"
+        android:background="@color/text_color"
+        android:textColor="@color/white"
+        android:id="@+id/register_Btn"
+        android:layout_below="@+id/loginBtn"
+        android:layout_alignLeft="@+id/loginBtn"
+        android:layout_alignStart="@+id/loginBtn"
+        android:layout_marginTop="31dp" />
+
+
+</RelativeLayout>
