@@ -18,6 +18,7 @@ import com.aicre.wuliuapp.app.fragment.MeFragment;
 import com.aicre.wuliuapp.app.fragment.MeFragment_no;
 import com.aicre.wuliuapp.app.fragment.RecommendFragment;
 import com.aicre.wuliuapp.app.fragment.SettingFragment;
+import com.umeng.analytics.MobclickAgent;
 
 
 public class MainActivity extends FragmentActivity {
@@ -50,6 +51,10 @@ public class MainActivity extends FragmentActivity {
         super.onCreate(savedInstanceState) ;
         setContentView(R.layout.activity_main) ;
         //ActionBar bar = this.getActionBar();
+
+        MobclickAgent.openActivityDurationTrack(false);
+
+
 
         mFragmentManager = getSupportFragmentManager() ;
         findRelativeLayoutView() ;
@@ -194,5 +199,17 @@ public class MainActivity extends FragmentActivity {
             }
             return true;
         }
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        MobclickAgent.onResume(this);
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        MobclickAgent.onPause(this);
     }
 }

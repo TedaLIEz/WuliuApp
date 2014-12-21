@@ -13,6 +13,7 @@ import com.aicre.wuliuapp.app.RequestManager;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.Request;
+import com.umeng.analytics.MobclickAgent;
 
 
 public class BaseActivity extends ActionBarActivity {
@@ -30,7 +31,6 @@ public class BaseActivity extends ActionBarActivity {
         getSupportActionBar().setDisplayShowTitleEnabled(true);
         getSupportActionBar().setDisplayUseLogoEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
-
         getSupportActionBar().setIcon(R.drawable.icon);
     }
 
@@ -64,6 +64,18 @@ public class BaseActivity extends ActionBarActivity {
                 Toast.makeText(getApplicationContext(), R.string.error,Toast.LENGTH_LONG).show();
             }
         };
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        MobclickAgent.onResume(this);
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        MobclickAgent.onResume(this);
     }
 }
 

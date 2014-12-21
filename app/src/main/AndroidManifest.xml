@@ -31,6 +31,26 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme"
         >
+
+
+        <service
+            android:name="com.umeng.update.net.DownloadingService"
+            android:process=":DownloadingService" >
+        </service>
+        <activity
+            android:name="com.umeng.update.UpdateDialogActivity"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
+        </activity>
+
+        <activity
+            android:name="com.umeng.fb.ConversationActivity"/>
+        <meta-data
+            android:value="54966f6dfd98c5f6b700098d"
+            android:name="UMENG_APPKEY"/>
+        <meta-data
+            android:value="Umeng"
+            android:name="UMENG_CHANNEL"/>
+
         <activity
             android:name="com.aicre.wuliuapp.app.MainActivity"
             android:label="@string/app_name" >

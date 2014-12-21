@@ -14,6 +14,7 @@ import com.aicre.wuliuapp.app.RequestManager;
 import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
+import com.umeng.analytics.MobclickAgent;
 
 /**
  * Created by wei on 14-7-6.
@@ -26,6 +27,8 @@ public class BaseFragment extends Fragment {
 
         setHasOptionsMenu(true);
     }
+
+
 
     @Override
     public void onStop() {

@@ -53,7 +53,6 @@ public class RegistActivity extends BaseActivity {
                 if(account.getText().toString().equals("")||psw.getText().toString().equals("")||number.getText().toString().equals("")||name.getText().toString().equals("")){
                     Toast.makeText(getApplicationContext(),"以上内容不能有空",Toast.LENGTH_LONG).show();
                 }else{
-
                     pd.show();
                     executeRequest(new String2Request(Globles.REGISTER_URL,"utf-8" , responseListener(),
                             errorListener()) {

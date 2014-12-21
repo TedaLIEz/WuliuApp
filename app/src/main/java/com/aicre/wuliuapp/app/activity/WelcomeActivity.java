@@ -11,7 +11,8 @@ import android.view.WindowManager;
 
 import com.aicre.wuliuapp.app.MainActivity;
 import com.aicre.wuliuapp.app.R;
-
+import com.umeng.analytics.MobclickAgent;
+import com.umeng.update.UmengUpdateAgent;
 
 
 public class WelcomeActivity extends Activity{
@@ -22,6 +23,10 @@ public class WelcomeActivity extends Activity{
         setContentView(R.layout.activity_welcome);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         this.getActionBar().hide();
+
+        UmengUpdateAgent.setUpdateOnlyWifi(false);
+        UmengUpdateAgent.update(this);
+
         new Handler().postDelayed(new Runnable(){
 
             @Override
@@ -53,4 +58,18 @@ public class WelcomeActivity extends Activity{
         }
         return super.onOptionsItemSelected(item);
     }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        MobclickAgent.onResume(this);
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        MobclickAgent.onResume(this);
+    }
+
+
 }

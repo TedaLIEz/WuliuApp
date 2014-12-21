@@ -8,6 +8,12 @@
         revision="19.1.0"
         sha1="85f201b380937e61a9dce6ca90ccf6872abbfb67"/>
     <item
+        dex="/home/wei/project/WuliuApp/app/build/intermediates/pre-dexed/debug/com.umeng.fb.v5.0.0-b71ef0f73b02cded8730d429334e5985014612c2.jar"
+        jar="/home/wei/project/WuliuApp/app/libs/com.umeng.fb.v5.0.0.jar"
+        jumboMode="false"
+        revision="19.1.0"
+        sha1="377fef7ef33374644f95fb3d78b26daf3b498945"/>
+    <item
         dex="/home/wei/project/WuliuApp/app/build/intermediates/pre-dexed/debug/armeabi-31d965c3ff24929264762f8d2a3c5c4677389423.jar"
         jar="/home/wei/project/WuliuApp/app/libs/armeabi.jar"
         jumboMode="false"
@@ -31,5 +37,11 @@
         jumboMode="false"
         revision="19.1.0"
         sha1="c3a7127079ec88fd22c96c4ccadfec2fd3d28998"/>
+    <item
+        dex="/home/wei/project/WuliuApp/app/build/intermediates/pre-dexed/debug/umeng-analytics-v5.2.4-97381de97a1973fe21aec9b663018dfa3bf12786.jar"
+        jar="/home/wei/project/WuliuApp/app/libs/umeng-analytics-v5.2.4.jar"
+        jumboMode="false"
+        revision="19.1.0"
+        sha1="0f9eccf79ae6006e4346725b09114182dca0c023"/>
 
 </pre-dex-items>

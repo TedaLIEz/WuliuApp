@@ -17,6 +17,7 @@ import com.aicre.wuliuapp.app.activity.LoginActivity;
 import com.aicre.wuliuapp.app.util.Globles;
 import com.aicre.wuliuapp.app.util.String2Request;
 import com.android.volley.Response;
+import com.umeng.analytics.MobclickAgent;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -93,7 +94,12 @@ public class MeFragment_no extends BaseFragment{
 
         }
         super.onResume();
+        MobclickAgent.onPageStart("MeFragment_no");
     }
 
-
+    @Override
+    public void onPause() {
+        super.onPause();
+        MobclickAgent.onPageEnd("MeFragment_no");
+    }
 }

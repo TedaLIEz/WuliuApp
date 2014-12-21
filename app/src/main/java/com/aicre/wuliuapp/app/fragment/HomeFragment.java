@@ -31,6 +31,8 @@ import com.aicre.wuliuapp.app.util.Globles;
 import com.aicre.wuliuapp.app.util.String2Request;
 import com.aicre.wuliuapp.app.view.XListView;
 import com.android.volley.Response;
+import com.umeng.analytics.MobclickAgent;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -293,5 +295,17 @@ public class HomeFragment extends BaseFragment implements XListView.IXListViewLi
 
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        MobclickAgent.onPageStart("HomeFragment");
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        MobclickAgent.onPageEnd("HomeFragment");
     }
 }
