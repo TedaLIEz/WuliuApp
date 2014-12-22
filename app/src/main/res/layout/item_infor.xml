@@ -20,7 +20,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text=""
+            android:text="无"
             android:textColor="@color/_black"
             android:textSize="@dimen/big_text"
             android:typeface="sans"></TextView>
@@ -40,7 +40,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColor="@color/_black"
-            android:text=""
+            android:text="无"
             android:textSize="@dimen/big_text" />
 
     </LinearLayout>
@@ -55,7 +55,7 @@
             android:layout_weight="1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text=""
+            android:text="无"
             android:textColor="@color/_black"
             android:textSize="@dimen/big_text" />
 
@@ -64,7 +64,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text=""
+            android:text="无"
             android:textColor="@color/text_color"
             android:textSize="@dimen/big_text" />
 
@@ -73,7 +73,7 @@
             android:layout_width="match_parent"
             android:layout_weight="1"
             android:layout_height="wrap_content"
-            android:text=""
+            android:text="无"
             android:textColor="@color/text_color"
             android:textSize="@dimen/big_text" />
 
@@ -82,7 +82,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="@string/default_length"
+            android:text="无"
             android:textColor="@color/text_color"
             android:textSize="@dimen/big_text" />
 
@@ -97,7 +97,7 @@
             android:id="@+id/contact_man"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text=""
+            android:text="无"
             android:textColor="@color/_black"
             android:textSize="@dimen/big_text"
             android:typeface="sans" />
@@ -108,7 +108,7 @@
             android:layout_height="wrap_content"
             android:textColor="@color/_black"
             android:layout_marginLeft="25dp"
-            android:text=""
+            android:text="无"
             android:textSize="@dimen/big_text"
             android:layout_alignParentTop="true"
             android:layout_toRightOf="@+id/contact_man" />
@@ -128,7 +128,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/_black"
-            android:text=""
+            android:text="无"
             android:textSize="@dimen/small_text"
             android:layout_marginTop="23dp"/>
     </RelativeLayout>

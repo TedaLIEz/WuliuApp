@@ -3,21 +3,17 @@ package com.aicre.wuliuapp.app;
 import android.content.Context;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
-import android.support.v4.app.FragmentManager;
 import android.util.AttributeSet;
 
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.support.v7.app.ActionBar;
+
+import com.aicre.wuliuapp.app.fragment.HisFragment;
 import com.aicre.wuliuapp.app.fragment.HomeFragment;
-import com.aicre.wuliuapp.app.fragment.MeFragment;
 import com.aicre.wuliuapp.app.fragment.MeFragment_no;
 import com.aicre.wuliuapp.app.fragment.RecommendFragment;
-import com.aicre.wuliuapp.app.fragment.SettingFragment;
 import com.umeng.analytics.MobclickAgent;
 
 
@@ -26,7 +22,7 @@ public class MainActivity extends FragmentActivity {
     static private HomeFragment mFragmentFirst;
     static private RecommendFragment mFragmentSecond;
     static private MeFragment_no mFragmentThird;
-    static private SettingFragment mFragmentForth;
+    static private HisFragment mFragmentForth;
 
     static private android.support.v4.app.FragmentManager mFragmentManager;
 
@@ -61,7 +57,7 @@ public class MainActivity extends FragmentActivity {
         mFragmentFirst = new HomeFragment() ;
         mFragmentSecond = new RecommendFragment() ;
         mFragmentThird = new MeFragment_no() ;
-        mFragmentForth = new SettingFragment() ;
+        mFragmentForth = new HisFragment() ;
         this.getActionBar().setDisplayHomeAsUpEnabled(false);
         this.getActionBar().setDisplayUseLogoEnabled(false);
         this.getActionBar().setDisplayShowHomeEnabled(true);
@@ -189,7 +185,7 @@ public class MainActivity extends FragmentActivity {
                                 mImageViewThird.setImageDrawable(getResources().getDrawable(R.drawable.me))         ;
                                 mImageViewForth.setImageDrawable(getResources().getDrawable(R.drawable.setting_press)) ;
                                 if(mFragmentForth ==null) {
-                                    mFragmentForth = new SettingFragment() ;
+                                    mFragmentForth = new HisFragment() ;
                                 }
                                 mFragmentManager.beginTransaction().replace(R.id.fragment_container ,mFragmentForth ).commit() ;
                                 break ;

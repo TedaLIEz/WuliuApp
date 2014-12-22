@@ -8,6 +8,18 @@
         revision="19.1.0"
         sha1="85f201b380937e61a9dce6ca90ccf6872abbfb67"/>
     <item
+        dex="/home/wei/project/WuliuApp/app/build/intermediates/pre-dexed/debug/ormlite-android-4.48-b12239efb272b48c014bb7e762e760a1cfd8a0ea.jar"
+        jar="/home/wei/project/WuliuApp/app/libs/ormlite-android-4.48.jar"
+        jumboMode="false"
+        revision="19.1.0"
+        sha1="afa06f539a4026c10b247386312aa67404b80a16"/>
+    <item
+        dex="/home/wei/project/WuliuApp/app/build/intermediates/pre-dexed/debug/ormlite-core-4.48-759605a80af71f5c53f3554af6e5f0b67fbedb2c.jar"
+        jar="/home/wei/project/WuliuApp/app/libs/ormlite-core-4.48.jar"
+        jumboMode="false"
+        revision="19.1.0"
+        sha1="e579bd2905d0399af5029aaaf9817d5fa0ca88a5"/>
+    <item
         dex="/home/wei/project/WuliuApp/app/build/intermediates/pre-dexed/debug/com.umeng.fb.v5.0.0-b71ef0f73b02cded8730d429334e5985014612c2.jar"
         jar="/home/wei/project/WuliuApp/app/libs/com.umeng.fb.v5.0.0.jar"
         jumboMode="false"
@@ -18,7 +30,13 @@
         jar="/home/wei/project/WuliuApp/app/libs/armeabi.jar"
         jumboMode="false"
         revision="19.1.0"
-        sha1="e2eaf479cd54a083590a049112973e0e8aa1f169"/>
+        sha1="4be803ddb898fb08f5af08abd3cebd80bb7bfb27"/>
+    <item
+        dex="/home/wei/project/WuliuApp/app/build/intermediates/pre-dexed/debug/umeng-update-v2.4.2-2bbc6c6967c60f7d0a21422240433f83cfc7195c.jar"
+        jar="/home/wei/project/WuliuApp/app/libs/umeng-update-v2.4.2.jar"
+        jumboMode="false"
+        revision="19.1.0"
+        sha1="ee700e317f574886dc0a236b801f219df6fbd26d"/>
     <item
         dex="/home/wei/project/WuliuApp/app/build/intermediates/pre-dexed/debug/locSDK_4.2-09ce17212085bfdb62025e0309c32ea46c7fbec9.jar"
         jar="/home/wei/project/WuliuApp/app/libs/locSDK_4.2.jar"

@@ -27,6 +27,8 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import com.aicre.wuliuapp.app.R;
 import com.aicre.wuliuapp.app.activity.DetailActivity;
+import com.aicre.wuliuapp.app.dao.Contacts;
+import com.aicre.wuliuapp.app.dao.ContactsDB;
 import com.aicre.wuliuapp.app.util.Globles;
 import com.aicre.wuliuapp.app.util.String2Request;
 import com.aicre.wuliuapp.app.view.XListView;
@@ -36,6 +38,8 @@ import com.umeng.analytics.MobclickAgent;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+
+import java.sql.Time;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -226,6 +230,16 @@ public class HomeFragment extends BaseFragment implements XListView.IXListViewLi
                 @Override
                 public void onClick(View v) {
                     String str = "tel:"+map.get("phone");
+
+                    /*
+                    添加数据库
+                     */
+                    ContactsDB mDB = new ContactsDB(getActivity());
+                    SimpleDateFormat formatter = new SimpleDateFormat ("yyyy年MM月dd日 HH:mm:ss");
+                    Date curDate = new Date(System.currentTimeMillis());//获取当前时间
+                    String time = formatter.format(curDate);
+                    mDB.add(new Contacts(Integer.parseInt(map.get("id")),map.get("name"),map.get("phone"),time ));
+
                     Intent i = new Intent("android.intent.action.DIAL", Uri.parse(str));
                     startActivity(i);
                 }
