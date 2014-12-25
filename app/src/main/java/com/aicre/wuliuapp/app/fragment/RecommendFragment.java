@@ -132,6 +132,8 @@ public class RecommendFragment extends BaseFragment implements XListView.IXListV
 
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                if(position < 1)
+                    return;
                 HashMap<String,String> map = list.get(position-1) ;
                 Intent i = new Intent(getActivity(), DetailActivity.class);
                 i.putExtra("id",map);
@@ -287,7 +289,6 @@ public class RecommendFragment extends BaseFragment implements XListView.IXListV
                 map.put("tc",obj.getString("tc"));
                 map.put("gn",obj.getString("gn"));
                 map.put("ct",obj.getString("ct"));
-                //map.put("gt",obj.getString("gt"));
                 map.put("gm",obj.getString("gm"));
                 map.put("gw",obj.getString("gw"));
                 map.put("cs",obj.getString("cs"));

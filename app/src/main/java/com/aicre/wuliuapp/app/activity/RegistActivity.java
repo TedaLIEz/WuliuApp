@@ -47,6 +47,9 @@ public class RegistActivity extends BaseActivity {
         name = (EditText)findViewById(R.id.edit_name);
         registBtn = (Button)findViewById(R.id.registerBtn);
 
+
+
+
         registBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -88,10 +91,7 @@ public class RegistActivity extends BaseActivity {
         // Handle action bar item clicks here. The action bar will
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-        if (id == R.id.action_settings) {
-            return true;
-        }
+
         return super.onOptionsItemSelected(item);
     }
     private Response.Listener<String> responseListener(){

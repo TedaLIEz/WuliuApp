@@ -60,7 +60,6 @@ public class LoginActivity extends BaseActivity{
                     executeRequest(new String2Request(Globles.LOGIN_URL, "utf-8", responseListener(),
                             errorListener()) {
                         protected Map<String, String> getParams() {
-                            //return new ApiParams().with("param1", "02").with("param2", "14");
                             Map<String, String> m = new HashMap<String, String>();
                             m.put("username", maccount.getText().toString());
                             m.put("password", mpassword.getText().toString());
@@ -70,7 +69,6 @@ public class LoginActivity extends BaseActivity{
                     });
                 }
 
-                //Log.d("result",result);
             }
         });
 
@@ -96,10 +94,7 @@ public class LoginActivity extends BaseActivity{
         // Handle action bar item clicks here. The action bar will
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-        if (id == R.id.action_settings) {
-            return true;
-        }
+
         return super.onOptionsItemSelected(item);
     }
 

@@ -208,4 +208,6 @@ public class MainActivity extends FragmentActivity {
         super.onPause();
         MobclickAgent.onPause(this);
     }
+
+
 }

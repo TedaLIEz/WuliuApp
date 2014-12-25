@@ -2,6 +2,47 @@
 
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
+    android:paddingTop="15dp"
     android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_height="50dp"
+        android:layout_width="fill_parent"
+        >
+        <EditText
+            android:hint="手机号"
+            android:id="@+id/regist_phone"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"/>
+        <Button
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="2"
+            android:background="@color/text_color"
+            android:textColor="@android:color/white"
+            android:gravity="center_horizontal"
+            android:text="发送验证码"
+            android:paddingTop="15dp"
+            android:id="@+id/verifybtn"/>
+        </LinearLayout>
+    <EditText
+        android:id="@+id/regist_code"
+        android:hint="验证码"
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        />
+
+    <EditText
+        android:id="@+id/regist_psw"
+        android:paddingTop="20dp"
+        android:hint="密码 （6-12位英文或数字）"
+        android:layout_width="fill_parent"
+        android:layout_height="50dp" />
+    <EditText
+        android:id="@+id/regist_repsw"
+        android:hint="重复密码"
+        android:paddingTop="15dp"
+        android:layout_width="fill_parent"
+        android:layout_height="50dp" />
 
 </LinearLayout>

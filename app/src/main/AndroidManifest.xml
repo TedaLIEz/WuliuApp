@@ -78,7 +78,8 @@
         </activity>
         <activity
             android:name=".activity.RegistActivity"
-            android:label="@string/title_activity_add" >
+            android:label="@string/title_activity_add"
+            android:windowSoftInputMode="stateVisible|adjustResize">
         </activity>
         <activity
             android:name="com.aicre.wuliuapp.app.activity.LoginActivity"

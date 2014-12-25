@@ -18,6 +18,7 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewConfiguration;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.BaseAdapter;
@@ -39,6 +40,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.lang.reflect.Field;
 import java.sql.Time;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -82,6 +84,9 @@ public class HomeFragment extends BaseFragment implements XListView.IXListViewLi
         super.onCreateView(inflater, container,savedInstanceState);
         list = new ArrayList<HashMap<String, String>>();
         View view = inflater.inflate(R.layout.fragment_home, null, false);
+
+        forceShowOverflowMenu();
+
         mLIstView = (XListView) view.findViewById(R.id.lei_x_list_view);
         mMyBaseAdapter = new MyBaseAdapter(getActivity().getBaseContext());
         mLIstView.setAdapter(mMyBaseAdapter);
@@ -93,6 +98,8 @@ public class HomeFragment extends BaseFragment implements XListView.IXListViewLi
 
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                if(position < 1)
+                    return;
                 HashMap<String,String> map = list.get(position-1) ;
                 Intent i = new Intent(getActivity(), DetailActivity.class);
                 i.putExtra("id",map);
@@ -294,7 +301,7 @@ public class HomeFragment extends BaseFragment implements XListView.IXListViewLi
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
         super.onCreateOptionsMenu(menu, inflater);
         inflater.inflate(R.menu.main, menu);
-        MenuItemCompat.setShowAsAction(menu.findItem(R.id.search_bar),MenuItemCompat.SHOW_AS_ACTION_ALWAYS);
+        MenuItemCompat.setShowAsAction(menu.findItem(R.id.action_search),MenuItemCompat.SHOW_AS_ACTION_ALWAYS);
 
 
     }
@@ -302,7 +309,7 @@ public class HomeFragment extends BaseFragment implements XListView.IXListViewLi
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
-            case R.id.search_bar:
+            case R.id.action_search:
                 search();
             default:
                 break;
@@ -321,5 +328,20 @@ public class HomeFragment extends BaseFragment implements XListView.IXListViewLi
     public void onPause() {
         super.onPause();
         MobclickAgent.onPageEnd("HomeFragment");
+    }
+
+
+    private void forceShowOverflowMenu() {
+        try {
+            ViewConfiguration config = ViewConfiguration.get(this.getActivity());
+            Field menuKeyField = ViewConfiguration.class
+                    .getDeclaredField("sHasPermanentMenuKey");
+            if (menuKeyField != null) {
+                menuKeyField.setAccessible(true);
+                menuKeyField.setBoolean(config, false);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }

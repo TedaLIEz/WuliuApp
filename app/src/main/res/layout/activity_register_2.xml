@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingTop="15dp"
+    android:orientation="vertical">
+    <EditText
+        android:id="@+id/regist_long"
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:hint="车长（单位：米）   特种车辆可不填"/>
+
+    <EditText
+        android:id="@+id/regist_weight"
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:hint="载重（单位：吨）  特种车辆可不填"/>
+
+    <EditText
+        android:id="@+id/regist_volume"
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:hint="体积（单位：吨）  特种车辆可不填"/>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="50dp">
+        <Spinner
+            android:id="@+id/regist_brand"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1">
+
+            </Spinner>
+        <EditText
+            android:id="@+id/regist_model"
+            android:hint="型号"
+            android:layout_weight="1"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent" />
+        </LinearLayout>
+
+    <EditText
+        android:id="@+id/remarks"
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:hint="备注"/>
+</LinearLayout>

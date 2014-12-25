@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:paddingTop="15dp"
+    android:orientation="vertical"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:hint="真实姓名"
+        android:id="@+id/regist_name"/>
+    <LinearLayout
+        android:paddingTop="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+        <Spinner
+            android:id="@+id/regist_card_1"
+            android:layout_weight="2"
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"></Spinner>
+        <Spinner
+            android:id="@+id/regist_card_2"
+            android:layout_weight="2"
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"></Spinner>
+        <EditText
+            android:id="@+id/regist_card_3"
+            android:layout_weight="1"
+            android:hint="车牌号"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:paddingTop="15dp">
+        <Spinner
+            android:id="@+id/regist_type_1"
+            android:layout_weight="2"
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"></Spinner>
+        <Spinner
+            android:id="@+id/regist_type_2"
+            android:layout_weight="2"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"></Spinner>
+        </LinearLayout>
+
+    <ImageSwitcher
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"></ImageSwitcher>
+</LinearLayout>
