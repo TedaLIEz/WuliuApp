@@ -74,7 +74,7 @@ public class BaseActivity extends ActionBarActivity {
     @Override
     protected void onPause() {
         super.onPause();
-        MobclickAgent.onResume(this);
+        MobclickAgent.onPause(this);
     }
 }
 

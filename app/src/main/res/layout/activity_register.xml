@@ -1,48 +1,184 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
     android:paddingTop="15dp"
     android:layout_height="match_parent">
-    <LinearLayout
-        android:layout_height="50dp"
-        android:layout_width="fill_parent"
-        >
-        <EditText
-            android:hint="手机号"
-            android:id="@+id/regist_phone"
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            android:layout_weight="1"/>
-        <Button
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            android:layout_weight="2"
-            android:background="@color/text_color"
-            android:textColor="@android:color/white"
-            android:gravity="center_horizontal"
-            android:text="发送验证码"
-            android:paddingTop="15dp"
-            android:id="@+id/verifybtn"/>
-        </LinearLayout>
-    <EditText
-        android:id="@+id/regist_code"
-        android:hint="验证码"
-        android:layout_width="fill_parent"
-        android:layout_height="50dp"
-        />
 
-    <EditText
-        android:id="@+id/regist_psw"
-        android:paddingTop="20dp"
-        android:hint="密码 （6-12位英文或数字）"
+    <ViewFlipper
+        android:id="@+id/MyView"
         android:layout_width="fill_parent"
-        android:layout_height="50dp" />
-    <EditText
-        android:id="@+id/regist_repsw"
-        android:hint="重复密码"
-        android:paddingTop="15dp"
-        android:layout_width="fill_parent"
-        android:layout_height="50dp" />
+        android:layout_height="fill_parent"
+        android:persistentDrawingCache="animation"
+        android:flipInterval="1000"
+        android:inAnimation="@anim/push_left_in"
+        android:outAnimation="@anim/push_left_out">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_height="50dp"
+                android:layout_width="fill_parent">
+
+                <EditText
+                    android:hint="手机号"
+                    android:id="@+id/regist_phone"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1" />
+
+                <Button
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="2"
+                    android:background="@color/text_color"
+                    android:textColor="@android:color/white"
+                    android:gravity="center_horizontal"
+                    android:text="发送验证码"
+                    android:paddingTop="15dp"
+                    android:id="@+id/verifybtn" />
+            </LinearLayout>
+
+            <EditText
+                android:id="@+id/regist_code"
+                android:hint="验证码"
+                android:layout_width="fill_parent"
+                android:layout_height="50dp" />
+
+            <EditText
+                android:id="@+id/regist_psw"
+                android:paddingTop="20dp"
+                android:hint="密码 （6-12位英文或数字）"
+                android:layout_width="fill_parent"
+                android:layout_height="50dp" />
+
+            <EditText
+                android:id="@+id/regist_repsw"
+                android:hint="重复密码"
+                android:paddingTop="15dp"
+                android:layout_width="fill_parent"
+                android:layout_height="50dp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:hint="真实姓名"
+                android:id="@+id/regist_name" />
+
+            <LinearLayout
+                android:paddingTop="15dp"
+                android:layout_width="match_parent"
+                android:layout_height="50dp">
+
+                <Spinner
+                    android:id="@+id/regist_card_1"
+                    android:layout_weight="2"
+                    android:layout_width="match_parent"
+                    android:layout_height="fill_parent"></Spinner>
+
+                <Spinner
+                    android:id="@+id/regist_card_2"
+                    android:layout_weight="2"
+                    android:layout_width="match_parent"
+                    android:layout_height="fill_parent"></Spinner>
+
+                <EditText
+                    android:id="@+id/regist_card_3"
+                    android:layout_weight="1"
+                    android:hint="车牌号"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:paddingTop="15dp">
+
+                <Spinner
+                    android:id="@+id/regist_type_1"
+                    android:layout_weight="2"
+                    android:layout_width="match_parent"
+                    android:layout_height="fill_parent"></Spinner>
+
+                <Spinner
+                    android:id="@+id/regist_type_2"
+                    android:layout_weight="2"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"></Spinner>
+            </LinearLayout>
+
+            <ImageSwitcher
+                android:id="@+id/license_photo"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"></ImageSwitcher>
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            android:orientation="vertical">
+
+            <EditText
+                android:id="@+id/regist_long"
+                android:layout_width="fill_parent"
+                android:layout_height="50dp"
+                android:hint="车长（单位：米）   特种车辆可不填" />
+
+            <EditText
+                android:id="@+id/regist_weight"
+                android:layout_width="fill_parent"
+                android:layout_height="50dp"
+                android:hint="载重（单位：吨）  特种车辆可不填" />
+
+            <EditText
+                android:id="@+id/regist_volume"
+                android:layout_width="fill_parent"
+                android:layout_height="50dp"
+                android:hint="体积（单位：吨）  特种车辆可不填" />
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="50dp">
+
+                <Spinner
+                    android:id="@+id/regist_brand"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1">
+
+                </Spinner>
+
+                <EditText
+                    android:id="@+id/regist_model"
+                    android:hint="型号"
+                    android:layout_weight="1"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent" />
+            </LinearLayout>
+
+            <EditText
+                android:id="@+id/remarks"
+                android:layout_width="fill_parent"
+                android:layout_height="50dp"
+                android:hint="备注" />
+        </LinearLayout>
+
+    </ViewFlipper>
 
 </LinearLayout>

@@ -1,11 +1,22 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context="com.aicre.wuliuapp.app.MainActivity">
+    tools:context="com.aicre.wuliuapp.app.activity.RegistActivity">
 
+    <item
+        android:id="@+id/previous1"
+        android:title="上一步"
+        android:orderInCategory="1"
+        app:showAsAction="always"></item>
     <item
         android:id="@+id/next1"
         android:title="下一步"
         android:orderInCategory="100"
         app:showAsAction="always" />
+    <item
+        android:id="@+id/regist_complete"
+        android:title="完成"
+        android:orderInCategory="100"
+        app:showAsAction="always"
+        android:visible="false"></item>
 </menu>

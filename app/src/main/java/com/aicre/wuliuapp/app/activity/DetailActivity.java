@@ -1,10 +1,10 @@
 package com.aicre.wuliuapp.app.activity;
 
-import android.app.ActionBar;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 
+import android.support.v7.app.ActionBar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -38,7 +38,7 @@ public class DetailActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail);
 
-        ActionBar bar = getActionBar();
+        ActionBar bar = getSupportActionBar();
         bar.setTitle("详细信息");
         bar.setDisplayHomeAsUpEnabled(true);
         start_detail = (TextView) findViewById(R.id.start_detail);

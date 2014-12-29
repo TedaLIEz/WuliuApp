@@ -64,7 +64,7 @@ public class WelcomeActivity extends Activity{
     @Override
     protected void onPause() {
         super.onPause();
-        MobclickAgent.onResume(this);
+        MobclickAgent.onPause(this);
     }
 
 
