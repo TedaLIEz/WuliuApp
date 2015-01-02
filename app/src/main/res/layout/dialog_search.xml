@@ -2,15 +2,45 @@
 
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="fill_parent"
-    android:layout_height="fill_parent">
+    android:layout_height="220dp">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:text="搜索"
+        android:textColor="@color/text_color"
+        android:textSize="20sp"
+        android:paddingLeft="15dp"
+        android:gravity="center_vertical"/>
+    <View
+        android:layout_alignParentTop="true"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@color/text_color"
+        />
     <EditText
         android:id="@+id/start_address"
         android:hint="请输入出发地点"
         android:layout_width="fill_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="50dp"
+        android:paddingLeft="15dp"
+        android:background="@null"/>
+    <View
+        android:layout_alignParentTop="true"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/text_color"
+        />
     <EditText
         android:hint="请输入目的地点"
         android:id="@+id/finish_address"
+        android:background="@null"
+        android:paddingLeft="15dp"
         android:layout_width="fill_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="50dp" />
+    <View
+        android:layout_alignParentTop="true"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/text_color"
+        />
 </LinearLayout>

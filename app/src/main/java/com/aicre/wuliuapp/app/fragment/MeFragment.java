@@ -40,13 +40,8 @@ import java.util.Map;
 public class MeFragment extends BaseFragment {
 
     private SharedPreferences sp;
-    private TextView call_name;
-    private TextView name;
-    private TextView phone;
-    private TextView mail;
     private ProgressDialog pd;
     private String id;
-    private Button exitBtn;
     private MeFragment_no meFragment_no;
     static private Activity mActivity;
     static private FragmentManager mFragmentManager;
@@ -95,35 +90,35 @@ public class MeFragment extends BaseFragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        super.onCreateView(inflater, container, savedInstanceState);
+        //super.onCreateView(inflater, container, savedInstanceState);
         View view = inflater.inflate(R.layout.fragment_me, null, false);
 
 
         //v1 = this.getActivity().getLayoutInflater().inflate(R.layout.fragment_me_no, null);
         //v2 = this.getActivity().getLayoutInflater().inflate(R.layout.fragment_me,null);
 
-        call_name = (TextView) view.findViewById(R.id.call_name);
-        name = (TextView) view.findViewById(R.id.name);
-        phone = (TextView) view.findViewById(R.id.phone);
-        mail = (TextView) view.findViewById(R.id.mail);
-        exitBtn = (Button)view.findViewById(R.id.exit_login);
+//        call_name = (TextView) view.findViewById(R.id.call_name);
+//        name = (TextView) view.findViewById(R.id.name);
+//        phone = (TextView) view.findViewById(R.id.phone);
+//        mail = (TextView) view.findViewById(R.id.mail);
+//        exitBtn = (Button)view.findViewById(R.id.exit_login);
 
-        exitBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                SharedPreferences.Editor editor = sp.edit();
-                editor.remove("id");
-                editor.commit();
-                if(sp.getString("id","-1").trim().equals("-1")){
-                    Toast.makeText(getActivity(),"成功退出账号",Toast.LENGTH_LONG).show();
-                    //切换到未登录状态
-                    if(meFragment_no==null) {
-                        meFragment_no = new MeFragment_no();
-                    }
-                    getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, meFragment_no).commit();
-                }
-            }
-        });
+//        exitBtn.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                SharedPreferences.Editor editor = sp.edit();
+//                editor.remove("id");
+//                editor.commit();
+//                if(sp.getString("id","-1").trim().equals("-1")){
+//                    Toast.makeText(getActivity(),"成功退出账号",Toast.LENGTH_LONG).show();
+//                    //切换到未登录状态
+//                    if(meFragment_no==null) {
+//                        meFragment_no = new MeFragment_no();
+//                    }
+//                    getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, meFragment_no).commit();
+//                }
+//            }
+//        });
 
 
         return view;
@@ -136,7 +131,7 @@ public class MeFragment extends BaseFragment {
             public void onResponse(String s) {
                 //result = s;
                 pd.dismiss();
-                if (!s.isEmpty()) {
+                /*if (!s.isEmpty()) {
                     try {
                         JSONTokener jsonParser = new JSONTokener(s);
                         JSONObject obj = (JSONObject) jsonParser.nextValue();
@@ -150,7 +145,7 @@ public class MeFragment extends BaseFragment {
                         e.toString();
                     }
                     //切换到登录状态
-                }
+                }*/
             }
         };
     }

@@ -3,9 +3,11 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:paddingTop="15dp"
     android:layout_height="match_parent">
-
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:background="#f3f3f3"
+        android:layout_height="15dp"></RelativeLayout>
     <ViewFlipper
         android:id="@+id/MyView"
         android:layout_width="fill_parent"
@@ -15,114 +17,205 @@
         android:inAnimation="@anim/push_left_in"
         android:outAnimation="@anim/push_left_out">
 
+        <!--<LinearLayout-->
+            <!--android:orientation="vertical"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="match_parent">-->
+
+            <!--<View-->
+                <!--android:layout_alignParentTop="true"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="1dp"-->
+                <!--android:background="#c9c9c9"-->
+                <!--/>-->
+            <!--<LinearLayout-->
+                <!--android:layout_height="50dp"-->
+                <!--android:layout_width="fill_parent">-->
+
+                <!--<EditText-->
+                    <!--android:hint="手机号"-->
+                    <!--android:background="@null"-->
+                    <!--android:id="@+id/regist_phone"-->
+                    <!--android:layout_marginLeft="10dp"-->
+                    <!--android:textSize="15sp"-->
+
+                    <!--android:layout_width="fill_parent"-->
+                    <!--android:layout_height="fill_parent"-->
+                    <!--android:layout_weight="1" />-->
+
+                <!--<Button-->
+                    <!--android:layout_width="fill_parent"-->
+                    <!--android:layout_height="fill_parent"-->
+                    <!--android:layout_weight="2"-->
+                    <!--android:background="@color/text_color"-->
+                    <!--android:textColor="@android:color/white"-->
+                    <!--android:gravity="center_horizontal"-->
+                    <!--android:textSize="15sp"-->
+
+                    <!--android:text="发送验证码"-->
+                    <!--android:paddingTop="15dp"-->
+                    <!--android:id="@+id/verifybtn" />-->
+            <!--</LinearLayout>-->
+            <!--<View-->
+                <!--android:layout_alignParentTop="true"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="1dp"-->
+                <!--android:background="#c9c9c9"-->
+                <!--/>-->
+            <!--<EditText-->
+                <!--android:id="@+id/regist_code"-->
+
+                <!--android:textSize="15sp"-->
+                <!--android:hint="验证码"-->
+                <!--android:background="@null"-->
+                <!--android:layout_marginLeft="10dp"-->
+                <!--android:layout_width="fill_parent"-->
+                <!--android:layout_height="50dp" />-->
+
+            <!--<View-->
+                <!--android:layout_alignParentTop="true"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="1dp"-->
+                <!--android:background="#c9c9c9"-->
+                <!--/>-->
+            <!--<RelativeLayout-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:background="#f3f3f3"-->
+                <!--android:layout_height="15dp"></RelativeLayout>-->
+            <!--<View-->
+                <!--android:layout_alignParentTop="true"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="1dp"-->
+                <!--android:background="#c9c9c9"-->
+                <!--/>-->
+            <!--<EditText-->
+                <!--android:id="@+id/regist_psw"-->
+
+                <!--android:textSize="15sp"-->
+                <!--android:background="@null"-->
+                <!--android:layout_marginLeft="10dp"-->
+                <!--android:hint="密码 （6-12位英文或数字）"-->
+                <!--android:layout_width="fill_parent"-->
+                <!--android:layout_height="50dp" />-->
+            <!--<View-->
+                <!--android:layout_alignParentTop="true"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="1dp"-->
+                <!--android:background="#c9c9c9"-->
+                <!--/>-->
+            <!--<EditText-->
+                <!--android:id="@+id/regist_repsw"-->
+                <!--android:hint="重复密码"-->
+                <!--android:background="@null"-->
+                <!--android:layout_marginLeft="10dp"-->
+                <!--android:textSize="15sp"-->
+
+                <!--android:layout_width="fill_parent"-->
+                <!--android:layout_height="50dp" />-->
+            <!--<View-->
+                <!--android:layout_alignParentTop="true"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="1dp"-->
+                <!--android:background="#c9c9c9"-->
+                <!--/>-->
+            <!--<RelativeLayout-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:background="#f3f3f3"-->
+                <!--android:layout_height="match_parent"></RelativeLayout>-->
+        <!--</LinearLayout>-->
+
         <LinearLayout
+
             android:orientation="vertical"
             android:layout_width="match_parent"
-
             android:layout_height="match_parent">
-
-            <LinearLayout
-                android:layout_height="50dp"
-                android:layout_width="fill_parent">
-
-                <EditText
-                    android:hint="手机号"
-                    android:id="@+id/regist_phone"
-                    android:layout_width="fill_parent"
-                    android:layout_height="fill_parent"
-                    android:layout_weight="1" />
-
-                <Button
-                    android:layout_width="fill_parent"
-                    android:layout_height="fill_parent"
-                    android:layout_weight="2"
-                    android:background="@color/text_color"
-                    android:textColor="@android:color/white"
-                    android:gravity="center_horizontal"
-                    android:text="发送验证码"
-                    android:paddingTop="15dp"
-                    android:id="@+id/verifybtn" />
-            </LinearLayout>
-
-            <EditText
-                android:id="@+id/regist_code"
-                android:hint="验证码"
-                android:layout_width="fill_parent"
-                android:layout_height="50dp" />
-
-            <EditText
-                android:id="@+id/regist_psw"
-                android:paddingTop="20dp"
-                android:hint="密码 （6-12位英文或数字）"
-                android:layout_width="fill_parent"
-                android:layout_height="50dp" />
-
-            <EditText
-                android:id="@+id/regist_repsw"
-                android:hint="重复密码"
-                android:paddingTop="15dp"
-                android:layout_width="fill_parent"
-                android:layout_height="50dp" />
-
-        </LinearLayout>
-
-        <LinearLayout
-
-            android:orientation="vertical"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
+            <View
+                android:layout_alignParentTop="true"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#c9c9c9"
+                />
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
+                android:background="@null"
+                android:textSize="15sp"
+
                 android:hint="真实姓名"
                 android:id="@+id/regist_name" />
-
+            <View
+                android:layout_alignParentTop="true"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#c9c9c9"
+                />
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="10dp"
+                android:background="#f3f3f3"></RelativeLayout>
+            <View
+                android:layout_alignParentTop="true"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#c9c9c9"
+                />
             <LinearLayout
-                android:paddingTop="15dp"
+                android:gravity="center_vertical"
                 android:layout_width="match_parent"
                 android:layout_height="50dp">
 
                 <Spinner
                     android:id="@+id/regist_card_1"
+
                     android:layout_weight="2"
                     android:layout_width="match_parent"
-                    android:layout_height="fill_parent"></Spinner>
+                    android:layout_height="40dp"
+                    ></Spinner>
 
                 <Spinner
                     android:id="@+id/regist_card_2"
                     android:layout_weight="2"
+
                     android:layout_width="match_parent"
-                    android:layout_height="fill_parent"></Spinner>
+                    android:layout_height="40dp"></Spinner>
 
                 <EditText
                     android:id="@+id/regist_card_3"
                     android:layout_weight="1"
+                    android:background="@null"
+                    android:layout_marginLeft="10dp"
                     android:hint="车牌号"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="match_parent" />
             </LinearLayout>
-
+            <View
+                android:layout_alignParentTop="true"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#c9c9c9"
+                />
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:paddingTop="15dp">
+                android:gravity="center_vertical"
+                >
 
                 <Spinner
-                    android:id="@+id/regist_type_1"
+                    android:id="@+id/regist_type"
                     android:layout_weight="2"
+                    android:layout_height="50dp"
                     android:layout_width="match_parent"
-                    android:layout_height="fill_parent"></Spinner>
-
-                <Spinner
-                    android:id="@+id/regist_type_2"
-                    android:layout_weight="2"
-                    android:layout_width="fill_parent"
-                    android:layout_height="fill_parent"></Spinner>
+                    ></Spinner>
             </LinearLayout>
+            <View
+                android:layout_alignParentTop="true"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#c9c9c9"
+                />
 
             <ImageSwitcher
-                android:id="@+id/license_photo"
+                android:id="@+id/type_photo"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"></ImageSwitcher>
         </LinearLayout>
@@ -133,24 +226,83 @@
             android:layout_height="match_parent"
 
             android:orientation="vertical">
-
+            <View
+                android:layout_alignParentTop="true"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#c9c9c9"
+                />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp">
+                <ImageButton
+                    android:id="@+id/license_photo"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/camera"
+                    android:drawingCacheQuality="auto"
+                    android:scaleType="centerInside"
+                    android:background="@color/text_color"
+                    android:layout_weight="4"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center|center_vertical"
+                    android:text="拍照上传驾驶证图像/驾驶证图像已上传"/>
+                </LinearLayout>
+            <View
+                android:layout_alignParentTop="true"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#c9c9c9"
+                />
             <EditText
                 android:id="@+id/regist_long"
+                android:background="@null"
+                android:layout_marginLeft="10dp"
                 android:layout_width="fill_parent"
+                android:textSize="15sp"
                 android:layout_height="50dp"
                 android:hint="车长（单位：米）   特种车辆可不填" />
+            <View
+                android:layout_alignParentTop="true"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#c9c9c9"
+                />
 
             <EditText
                 android:id="@+id/regist_weight"
+                android:background="@null"
+                android:layout_marginLeft="10dp"
+                android:textSize="15sp"
+
                 android:layout_width="fill_parent"
                 android:layout_height="50dp"
                 android:hint="载重（单位：吨）  特种车辆可不填" />
+            <View
+                android:layout_alignParentTop="true"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#c9c9c9"
+                />
 
             <EditText
                 android:id="@+id/regist_volume"
                 android:layout_width="fill_parent"
+                android:textSize="15sp"
+
+                android:layout_marginLeft="10dp"
                 android:layout_height="50dp"
+                android:background="@null"
                 android:hint="体积（单位：吨）  特种车辆可不填" />
+            <View
+                android:layout_alignParentTop="true"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#c9c9c9"
+                />
 
             <LinearLayout
                 android:layout_width="fill_parent"
@@ -160,6 +312,8 @@
                     android:id="@+id/regist_brand"
                     android:layout_width="fill_parent"
                     android:layout_height="fill_parent"
+                    android:layout_marginLeft="10dp"
+
                     android:layout_weight="1">
 
                 </Spinner>
@@ -167,16 +321,40 @@
                 <EditText
                     android:id="@+id/regist_model"
                     android:hint="型号"
+                    android:textSize="15sp"
+
+                    android:layout_marginLeft="10dp"
+                    android:background="@null"
                     android:layout_weight="1"
                     android:layout_width="fill_parent"
                     android:layout_height="fill_parent" />
             </LinearLayout>
+            <View
+                android:layout_alignParentTop="true"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#c9c9c9"
+                />
 
             <EditText
                 android:id="@+id/remarks"
+                android:layout_marginLeft="10dp"
                 android:layout_width="fill_parent"
                 android:layout_height="50dp"
+                android:background="@null"
+                android:textSize="15sp"
+
                 android:hint="备注" />
+            <View
+                android:layout_alignParentTop="true"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#c9c9c9"
+                />
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#f3f3f3"></RelativeLayout>
         </LinearLayout>
 
     </ViewFlipper>
