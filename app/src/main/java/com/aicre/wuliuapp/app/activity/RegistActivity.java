@@ -18,6 +18,8 @@ import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
@@ -40,8 +42,12 @@ import org.apache.http.Header;
 
 import java.io.ByteArrayOutputStream;
 import java.io.File;
+import java.lang.reflect.Array;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
+import java.util.logging.Handler;
 
 public class RegistActivity extends BaseActivity {
 
@@ -51,9 +57,14 @@ public class RegistActivity extends BaseActivity {
     private static final int PHOTO_REQUEST_CUT = 3;// 结果
 
 
+    private String jsonstr;
+    private Handler mHandle;
+    private List<String> pro;
+    private ArrayAdapter<String> adapter;
+
     private ViewFlipper mViewFlipper;
     private int page_num;
-//    private EditText account = null;
+    //    private EditText account = null;
 //    private EditText psw = null;
 //    private EditText number = null;
 //    private EditText name = null;
@@ -101,8 +112,13 @@ public class RegistActivity extends BaseActivity {
     private Bitmap bitmap;
 
 
+    private ArrayAdapter<String> cardoneAdapter;
+    private ArrayAdapter<String> cardtwoAdapter;
+
+
     private static final String PHOTO_FILE_NAME = "temp_photo.jpg";
     private File tempFile;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -128,17 +144,48 @@ public class RegistActivity extends BaseActivity {
 //        registBtn = (Button) findViewById(R.id.registerBtn);
 
 
-        regist_phone = (EditText) findViewById(R.id.regist_phone);
-        regist_code = (EditText) findViewById(R.id.regist_code);
-        regist_psw = (EditText) findViewById(R.id.regist_psw);
-        regist_repsw = (EditText) findViewById(R.id.regist_repsw);
-        verifyBtn = (Button) findViewById(R.id.verifybtn);
+//        regist_phone = (EditText) findViewById(R.id.regist_phone);
+//        regist_code = (EditText) findViewById(R.id.regist_code);
+//        regist_psw = (EditText) findViewById(R.id.regist_psw);
+//        regist_repsw = (EditText) findViewById(R.id.regist_repsw);
+//        verifyBtn = (Button) findViewById(R.id.verifybtn);
 
         regist_name = (EditText) findViewById(R.id.regist_name);
         regist_card_3 = (EditText) findViewById(R.id.regist_card_3);
+
         regist_card_1 = (Spinner) findViewById(R.id.regist_card_1);
+
+        regist_card_1.setAdapter(new ArrayAdapter<String>(RegistActivity.this, android.R.layout.simple_spinner_dropdown_item, new String[]{"皖", "澳", "京", "闽", "甘", "粤", "桂", "贵", "琼", "冀", "豫", "黑", "鄂", "湘", "吉", "苏", "赣", "辽", "蒙", "宁", "青", "鲁", "晋", "陕", "沪", "川", "台", "津", "藏", "港", "新", "云", "浙", "渝"}));
+
         regist_card_2 = (Spinner) findViewById(R.id.regist_card_2);
+        regist_card_2.setAdapter(new ArrayAdapter<String>(RegistActivity.this, android.R.layout.simple_spinner_dropdown_item, new String[]{"A", "B", "C", "D", "E", "F", "G", "H", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"}));
+
+
+
         regist_type = (Spinner) findViewById(R.id.regist_type);
+        regist_type.setAdapter(new ArrayAdapter<String>(RegistActivity.this, android.R.layout.simple_spinner_dropdown_item, new String[]{"载货车","挂车","微面及全封闭式货车","特种车辆"}));
+
+        regist_type.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, final int position, long id) {
+                executeRequest(new String2Request(Globles.GET_MODEL,"utf-8" , modelresponseListener(),
+                        errorListener()) {
+                    protected Map<String, String> getParams(){
+                        Map<String,String> m = new HashMap<String, String>();
+                        m.put("type",String.valueOf(position));
+                        return m;
+                    }
+
+                });
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+
+
         type_photo = (ImageSwitcher) findViewById(R.id.type_photo);
 
         regist_long = (EditText) findViewById(R.id.regist_long);
@@ -147,15 +194,15 @@ public class RegistActivity extends BaseActivity {
         regist_brand = (Spinner) findViewById(R.id.regist_brand);
         regist_model = (EditText) findViewById(R.id.regist_model);
         regist_remarks = (EditText) findViewById(R.id.remarks);
-        licenseBtn = (ImageButton)findViewById(R.id.license_photo);
+        licenseBtn = (ImageButton) findViewById(R.id.license_photo);
 
 
         licenseBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                AlertDialog.Builder dialog =new AlertDialog.Builder(RegistActivity.this);
-                LayoutInflater inflater = (LayoutInflater)RegistActivity.this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-                LinearLayout layout = (LinearLayout)inflater.inflate(R.layout.dialog_choose,null);
+                AlertDialog.Builder dialog = new AlertDialog.Builder(RegistActivity.this);
+                LayoutInflater inflater = (LayoutInflater) RegistActivity.this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+                LinearLayout layout = (LinearLayout) inflater.inflate(R.layout.dialog_choose, null);
                 dialog.setView(layout);
                 dialog.show();
             }
@@ -192,6 +239,9 @@ public class RegistActivity extends BaseActivity {
             }
         });*/
 
+        pro = new ArrayList<String>();
+
+
     }
 
 
@@ -202,15 +252,13 @@ public class RegistActivity extends BaseActivity {
         MenuItem next_item = menu.findItem(R.id.next1);
         MenuItem previous_item = menu.findItem(R.id.previous1);
         MenuItem complete_item = menu.findItem(R.id.regist_complete);
-        if(page_num==0) {
+        if (page_num == 0) {
             complete_item.setVisible(false);
             previous_item.setVisible(false);
-        }
-        else if(page_num==2) {
+        } else if (page_num == 2) {
             next_item.setVisible(false);
             complete_item.setVisible(true);
-        }
-        else {
+        } else {
             previous_item.setVisible(true);
             next_item.setVisible(true);
             complete_item.setVisible(false);
@@ -259,7 +307,7 @@ public class RegistActivity extends BaseActivity {
                         PHOTO_FILE_NAME);
                 crop(Uri.fromFile(tempFile));
             } else {
-                Toast.makeText(RegistActivity.this, "未找到存储卡，无法存储照片！",Toast.LENGTH_SHORT).show();
+                Toast.makeText(RegistActivity.this, "未找到存储卡，无法存储照片！", Toast.LENGTH_SHORT).show();
             }
 
         } else if (requestCode == PHOTO_REQUEST_CUT) {
@@ -279,12 +327,12 @@ public class RegistActivity extends BaseActivity {
 
     }
 
-    void uploadData(){
+    void uploadData() {
         phone = regist_phone.getText().toString();
         code = regist_code.getText().toString();
         psw = regist_psw.getText().toString();
         name = regist_name.getText().toString();
-        card = regist_card_1.getSelectedItem().toString()+regist_card_2.getSelectedItem().toString()+regist_card_3.getText().toString();
+        card = regist_card_1.getSelectedItem().toString() + regist_card_2.getSelectedItem().toString() + regist_card_3.getText().toString();
         type = regist_type.getSelectedItem().toString();
         length = Integer.getInteger(regist_long.getText().toString());
         weight = Integer.getInteger(regist_weight.getText().toString());
@@ -293,11 +341,9 @@ public class RegistActivity extends BaseActivity {
         remarks = regist_remarks.getText().toString();
 
 
-
-
     }
 
-    void uploadImg(){
+    void uploadImg() {
 
         try {
             ByteArrayOutputStream out = new ByteArrayOutputStream();
@@ -350,8 +396,6 @@ public class RegistActivity extends BaseActivity {
     }
 
 
-
-
     /*
  * 从相册获取
  */
@@ -393,6 +437,7 @@ public class RegistActivity extends BaseActivity {
         intent.putExtra("return-data", true);// true:不返回uri，false：返回uri
         startActivityForResult(intent, PHOTO_REQUEST_CUT);
     }
+
     private boolean hasSdcard() {
         if (Environment.getExternalStorageState().equals(
                 Environment.MEDIA_MOUNTED)) {
@@ -402,22 +447,35 @@ public class RegistActivity extends BaseActivity {
         }
     }
 
-    private Response.Listener<String> responseListener() {
+    private Response.Listener<String> responseListener(){
         return new Response.Listener<String>() {
             @Override
             public void onResponse(String s) {
-                //result = s;
-                pd.dismiss();
+            }
+        };
 
-                if (s.trim().equals("succeed")) {
+    }
 
-                    Toast.makeText(getApplicationContext(), "注册成功，请重新登录", Toast.LENGTH_LONG).show();
-                    RegistActivity.this.finish();
-                } else {
-                    Toast.makeText(getApplicationContext(), "注册失败", Toast.LENGTH_LONG).show();
-
-                }
+    private Response.Listener<String> modelresponseListener() {
+        return new Response.Listener<String>() {
+            @Override
+            public void onResponse(String s) {
+                Log.v("xxxxxx",s);
             }
         };
     }
+
+    private Response.Listener<String> brandresponseListener() {
+        return new Response.Listener<String>() {
+
+
+            @Override
+            public void onResponse(String s) {
+
+            }
+
+
+        };
+    }
+
 }

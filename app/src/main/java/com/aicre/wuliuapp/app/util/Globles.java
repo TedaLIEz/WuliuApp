@@ -21,4 +21,6 @@ public class Globles {
     public static String REGISTER_URL = BASE_URL+"register.php";
 
     public static String UPLOAD_PIC = TEST_URL+"uppic.php";
+
+    public static String GET_MODEL = TEST_URL+"select_type.php";
 }
