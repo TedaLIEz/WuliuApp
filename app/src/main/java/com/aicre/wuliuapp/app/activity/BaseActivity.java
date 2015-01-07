@@ -1,6 +1,7 @@
 package com.aicre.wuliuapp.app.activity;
 
 
+import android.app.FragmentManager;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
@@ -17,6 +18,7 @@ import com.umeng.analytics.MobclickAgent;
 
 
 public class BaseActivity extends ActionBarActivity {
+
 
 
     @Override
