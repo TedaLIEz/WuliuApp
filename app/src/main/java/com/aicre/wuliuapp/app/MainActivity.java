@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.util.AttributeSet;
 
 import android.view.MotionEvent;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -15,6 +16,8 @@ import com.aicre.wuliuapp.app.fragment.HomeFragment;
 import com.aicre.wuliuapp.app.fragment.MeFragment_no;
 import com.aicre.wuliuapp.app.fragment.RecommendFragment;
 import com.umeng.analytics.MobclickAgent;
+import com.umeng.fb.FeedbackAgent;
+import com.umeng.update.UmengUpdateAgent;
 
 
 public class MainActivity extends FragmentActivity {
@@ -207,6 +210,16 @@ public class MainActivity extends FragmentActivity {
     protected void onPause() {
         super.onPause();
         MobclickAgent.onPause(this);
+    }
+
+
+    public void checkVersion(View view){
+        UmengUpdateAgent.forceUpdate(this);
+    }
+
+    public void feedBack(View view){
+        FeedbackAgent agent = new FeedbackAgent(this);
+        agent.startFeedbackActivity();
     }
 
 

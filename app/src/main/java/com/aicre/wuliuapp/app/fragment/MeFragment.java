@@ -25,6 +25,8 @@ import com.aicre.wuliuapp.app.util.Globles;
 import com.aicre.wuliuapp.app.util.String2Request;
 import com.android.volley.Response;
 import com.umeng.analytics.MobclickAgent;
+import com.umeng.fb.FeedbackAgent;
+import com.umeng.update.UmengUpdateAgent;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -187,4 +189,7 @@ public class MeFragment extends BaseFragment {
         super.onPause();
         MobclickAgent.onPageEnd("MeFragment");
     }
+
+
+
 }

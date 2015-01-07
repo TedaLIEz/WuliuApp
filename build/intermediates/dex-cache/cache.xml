@@ -2,74 +2,25 @@
 <items version="2" >
 
     <item
-        jar="D:\WuliuApp\app\libs\armeabi.jar"
+        jar="/home/wei/project/WuliuApp/app/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.3/libs/internal_impl-21.0.3.jar"
         jumboMode="false"
         revision="19.1.0"
-        sha1="4be803ddb898fb08f5af08abd3cebd80bb7bfb27">
-        <dex dex="D:\WuliuApp\app\build\intermediates\pre-dexed\debug\armeabi-9989c26eff5d43dae3b618c0733dbc59f65785b1.jar" />
+        sha1="01ec05bfbafcc07646ba813000bf2ef11742dd03">
+        <dex dex="/home/wei/project/WuliuApp/app/build/intermediates/pre-dexed/debug/internal_impl-21.0.3-b4c7782ea44c9170d71c1a563be3e4766f954975.jar" />
     </item>
     <item
-        jar="D:\WuliuApp\app\libs\volley.jar"
+        jar="/home/wei/project/WuliuApp/app/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.3/classes.jar"
         jumboMode="false"
         revision="19.1.0"
-        sha1="c3a7127079ec88fd22c96c4ccadfec2fd3d28998">
-        <dex dex="D:\WuliuApp\app\build\intermediates\pre-dexed\debug\volley-efecb036c29b48f5bbba1fd40d6ee95d0521ae46.jar" />
+        sha1="2c91c949a45a21cdecf26e03951e46c7beec9ad8">
+        <dex dex="/home/wei/project/WuliuApp/app/build/intermediates/pre-dexed/debug/classes-e33161942ce8e109d16def3bc74b76b32694c816.jar" />
     </item>
     <item
-        jar="D:\WuliuApp\app\libs\ormlite-core-4.48.jar"
+        jar="/home/wei/sdk/extras/android/m2repository/com/android/support/support-annotations/21.0.3/support-annotations-21.0.3.jar"
         jumboMode="false"
         revision="19.1.0"
-        sha1="e579bd2905d0399af5029aaaf9817d5fa0ca88a5">
-        <dex dex="D:\WuliuApp\app\build\intermediates\pre-dexed\debug\ormlite-core-4.48-b1547ff914d792474ac1de2e88d35883eec599da.jar" />
-    </item>
-    <item
-        jar="D:\WuliuApp\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\19.1.0\classes.jar"
-        jumboMode="false"
-        revision="19.1.0"
-        sha1="3499ceba05ca1f6037c6a2fad73df8f636224a28">
-        <dex dex="D:\WuliuApp\app\build\intermediates\pre-dexed\debug\classes-7b28b7baab44b3dd0e830910f6da4100579e025b.jar" />
-    </item>
-    <item
-        jar="D:\WuliuApp\app\libs\umeng-analytics-v5.2.4.jar"
-        jumboMode="false"
-        revision="19.1.0"
-        sha1="0f9eccf79ae6006e4346725b09114182dca0c023">
-        <dex dex="D:\WuliuApp\app\build\intermediates\pre-dexed\debug\umeng-analytics-v5.2.4-9387e3cf6ec008907106a2c863af65dce221d462.jar" />
-    </item>
-    <item
-        jar="D:\WuliuApp\app\libs\com.umeng.fb.v5.0.0.jar"
-        jumboMode="false"
-        revision="19.1.0"
-        sha1="377fef7ef33374644f95fb3d78b26daf3b498945">
-        <dex dex="D:\WuliuApp\app\build\intermediates\pre-dexed\debug\com.umeng.fb.v5.0.0-30310afea1b13e2d0d446c1726d48a8f7487b188.jar" />
-    </item>
-    <item
-        jar="D:\WuliuApp\app\libs\locSDK_4.2.jar"
-        jumboMode="false"
-        revision="19.1.0"
-        sha1="41b93335a2753c93f8b8f56741615cb81ea72437">
-        <dex dex="D:\WuliuApp\app\build\intermediates\pre-dexed\debug\locSDK_4.2-e76cd46e20ae8b50fca525f53e59bde1fc4a8fee.jar" />
-    </item>
-    <item
-        jar="D:\WuliuApp\app\libs\umeng-update-v2.4.2.jar"
-        jumboMode="false"
-        revision="19.1.0"
-        sha1="ee700e317f574886dc0a236b801f219df6fbd26d">
-        <dex dex="D:\WuliuApp\app\build\intermediates\pre-dexed\debug\umeng-update-v2.4.2-d77fde0efcf6aa1a1a6b964c846ecaadca1e928b.jar" />
-    </item>
-    <item
-        jar="F:\AndroidSDK\extras\android\m2repository\com\android\support\support-v4\19.1.0\support-v4-19.1.0.jar"
-        jumboMode="false"
-        revision="19.1.0"
-        sha1="85f201b380937e61a9dce6ca90ccf6872abbfb67">
-        <dex dex="D:\WuliuApp\app\build\intermediates\pre-dexed\debug\support-v4-19.1.0-18f818cd044e9daf4574f2f341fc21eecdbdcd9a.jar" />
-    </item>
-    <item
-        jar="D:\WuliuApp\app\libs\ormlite-android-4.48.jar"
-        jumboMode="false"
-        revision="19.1.0"
-        sha1="afa06f539a4026c10b247386312aa67404b80a16">
-        <dex dex="D:\WuliuApp\app\build\intermediates\pre-dexed\debug\ormlite-android-4.48-3b9910cf71f72eba6a93921f6c68c1f1ad2368f4.jar" />
+        sha1="4b74cefe1f0c1b819e7260c8627a14674e37fd35">
+        <dex dex="/home/wei/project/WuliuApp/app/build/intermediates/pre-dexed/debug/support-annotations-21.0.3-db12f982184a345b9b00cb10121ef4c8f3680d83.jar" />
     </item>
 
 </items>
