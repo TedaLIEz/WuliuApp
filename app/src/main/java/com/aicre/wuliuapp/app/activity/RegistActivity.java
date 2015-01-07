@@ -64,11 +64,6 @@ public class RegistActivity extends BaseActivity {
 
     private ViewFlipper mViewFlipper;
     private int page_num;
-    //    private EditText account = null;
-//    private EditText psw = null;
-//    private EditText number = null;
-//    private EditText name = null;
-//    private Button registBtn;
     private ProgressDialog pd;
 
 
@@ -137,18 +132,6 @@ public class RegistActivity extends BaseActivity {
         pd.setProgressStyle(ProgressDialog.STYLE_SPINNER);
         pd.setMessage("提交信息中...");
 
-//        account = (EditText) findViewById(R.id.edit_account);
-//        psw = (EditText) findViewById(R.id.edit_psw);
-//        number = (EditText) findViewById(R.id.edit_number);
-//        name = (EditText) findViewById(R.id.edit_name);
-//        registBtn = (Button) findViewById(R.id.registerBtn);
-
-
-//        regist_phone = (EditText) findViewById(R.id.regist_phone);
-//        regist_code = (EditText) findViewById(R.id.regist_code);
-//        regist_psw = (EditText) findViewById(R.id.regist_psw);
-//        regist_repsw = (EditText) findViewById(R.id.regist_repsw);
-//        verifyBtn = (Button) findViewById(R.id.verifybtn);
 
         regist_name = (EditText) findViewById(R.id.regist_name);
         regist_card_3 = (EditText) findViewById(R.id.regist_card_3);
@@ -161,18 +144,17 @@ public class RegistActivity extends BaseActivity {
         regist_card_2.setAdapter(new ArrayAdapter<String>(RegistActivity.this, android.R.layout.simple_spinner_dropdown_item, new String[]{"A", "B", "C", "D", "E", "F", "G", "H", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"}));
 
 
-
         regist_type = (Spinner) findViewById(R.id.regist_type);
-        regist_type.setAdapter(new ArrayAdapter<String>(RegistActivity.this, android.R.layout.simple_spinner_dropdown_item, new String[]{"载货车","挂车","微面及全封闭式货车","特种车辆"}));
+        regist_type.setAdapter(new ArrayAdapter<String>(RegistActivity.this, android.R.layout.simple_spinner_dropdown_item, new String[]{"载货车", "挂车", "微面及全封闭式货车", "特种车辆"}));
 
         regist_type.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, final int position, long id) {
-                executeRequest(new String2Request(Globles.GET_MODEL,"utf-8" , modelresponseListener(),
+                executeRequest(new String2Request(Globles.GET_MODEL, "utf-8", modelresponseListener(),
                         errorListener()) {
-                    protected Map<String, String> getParams(){
-                        Map<String,String> m = new HashMap<String, String>();
-                        m.put("type",String.valueOf(position));
+                    protected Map<String, String> getParams() {
+                        Map<String, String> m = new HashMap<String, String>();
+                        m.put("type", String.valueOf(position));
                         return m;
                     }
 
@@ -209,36 +191,6 @@ public class RegistActivity extends BaseActivity {
         });
 
         page_num = 0;
-//        regist_card_1.setPrompt("湘");
-//        regist_card_2.setPrompt("A");
-//        regist_type_1.setPrompt("选择类型");
-//        regist_type_2.setPrompt("选择型号");
-//        regist_brand.setPrompt("选择品牌");
-        /*registBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if(account.getText().toString().equals("")||psw.getText().toString().equals("")||number.getText().toString().equals("")||name.getText().toString().equals("")){
-                    Toast.makeText(getApplicationContext(),"以上内容不能有空",Toast.LENGTH_LONG).show();
-                }else{
-                    pd.show();
-                    executeRequest(new String2Request(Globles.REGISTER_URL,"utf-8" , responseListener(),
-                            errorListener()) {
-                        protected Map<String, String> getParams(){
-                            Map<String,String> m = new HashMap<String, String>();
-                            m.put("username",account.getText().toString());
-                            m.put("password",psw.getText().toString());
-                            m.put("phone",number.getText().toString());
-                            m.put("name",name.getText().toString());
-                            m.put("type","1");
-                            return m;
-                        }
-
-                    });
-                }
-
-            }
-        });*/
-
         pro = new ArrayList<String>();
 
 
@@ -447,7 +399,7 @@ public class RegistActivity extends BaseActivity {
         }
     }
 
-    private Response.Listener<String> responseListener(){
+    private Response.Listener<String> responseListener() {
         return new Response.Listener<String>() {
             @Override
             public void onResponse(String s) {
@@ -460,7 +412,7 @@ public class RegistActivity extends BaseActivity {
         return new Response.Listener<String>() {
             @Override
             public void onResponse(String s) {
-                Log.v("xxxxxx",s);
+                Log.v("xxxxxx", s);
             }
         };
     }
