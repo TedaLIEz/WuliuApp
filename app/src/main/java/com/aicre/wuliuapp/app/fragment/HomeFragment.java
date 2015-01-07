@@ -216,8 +216,25 @@ public class HomeFragment extends BaseFragment implements XListView.IXListViewLi
 
             final HashMap<String,String> map = list.get(position) ;
 
-            holder.mStart.setText(map.get("fp")+map.get("fc"));
-            holder.mDestination.setText(map.get("tp")+map.get("tc"));
+            if((map.get("fp").length()+map.get("fc").length())>6){
+                int size=map.get("fp").length()+map.get("fc").length();
+                StringBuffer sb=new StringBuffer(map.get("fp")+map.get("fc"));
+                sb.delete(5,size);
+                sb.insert(5,"...");
+                holder.mStart.setText(sb.toString());
+            }else{
+                holder.mStart.setText(map.get("fp")+map.get("fc"));
+            }
+            if((map.get("tp").length()+map.get("tc").length())>6){
+                int size=map.get("tp").length()+map.get("tc").length();
+                StringBuffer sb=new StringBuffer(map.get("tp")+map.get("tc"));
+                sb.delete(5,size);
+                sb.insert(5,"...");
+                holder.mDestination.setText(sb.toString());
+            }else{
+                holder.mDestination.setText(map.get("tp")+map.get("tc"));
+            }
+
             holder.mKindCargo.setText(map.get("gn"));
             holder.mKindCar.setText(map.get("ct"));
 
