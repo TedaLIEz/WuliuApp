@@ -118,4 +118,8 @@ public class LoginActivity extends BaseActivity{
         };
     }
 
+    @Override
+    public ActionBar getSupportActionBar() {
+        return super.getSupportActionBar();
+    }
 }
