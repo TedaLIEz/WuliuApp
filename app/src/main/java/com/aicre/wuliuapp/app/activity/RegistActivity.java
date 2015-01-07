@@ -39,6 +39,9 @@ import com.loopj.android.http.AsyncHttpResponseHandler;
 import com.loopj.android.http.RequestParams;
 
 import org.apache.http.Header;
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.io.ByteArrayOutputStream;
 import java.io.File;
@@ -110,6 +113,9 @@ public class RegistActivity extends BaseActivity {
     private ArrayAdapter<String> cardoneAdapter;
     private ArrayAdapter<String> cardtwoAdapter;
 
+    private ArrayAdapter<String> brandAdapter;
+    private ArrayList<String> brandArray;
+
 
     private static final String PHOTO_FILE_NAME = "temp_photo.jpg";
     private File tempFile;
@@ -118,8 +124,7 @@ public class RegistActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
-
-
+        brandArray = new ArrayList<String>();
         ActionBar bar = getSupportActionBar();
         bar.setTitle("注册");
         bar.setIcon(R.drawable.icon);
@@ -142,6 +147,7 @@ public class RegistActivity extends BaseActivity {
 
         regist_card_2 = (Spinner) findViewById(R.id.regist_card_2);
         regist_card_2.setAdapter(new ArrayAdapter<String>(RegistActivity.this, android.R.layout.simple_spinner_dropdown_item, new String[]{"A", "B", "C", "D", "E", "F", "G", "H", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"}));
+//        regist_card_2.setAdapter(new ArrayAdapter<String>(RegistActivity.this, android.R.layout.simple_spinner_dropdown_item, brandArray));
 
 
         regist_type = (Spinner) findViewById(R.id.regist_type);
@@ -150,11 +156,12 @@ public class RegistActivity extends BaseActivity {
         regist_type.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, final int position, long id) {
+                pd.show();
                 executeRequest(new String2Request(Globles.GET_MODEL, "utf-8", modelresponseListener(),
                         errorListener()) {
                     protected Map<String, String> getParams() {
                         Map<String, String> m = new HashMap<String, String>();
-                        m.put("type", String.valueOf(position));
+                        m.put("type", String.valueOf(position + 1));
                         return m;
                     }
 
@@ -193,7 +200,8 @@ public class RegistActivity extends BaseActivity {
         page_num = 0;
         pro = new ArrayList<String>();
 
-
+        brandAdapter = new ArrayAdapter<String>(RegistActivity.this,android.R.layout.simple_spinner_dropdown_item,brandArray);
+        regist_brand.setAdapter(brandAdapter);
     }
 
 
@@ -274,7 +282,7 @@ public class RegistActivity extends BaseActivity {
             }
 
         }
-
+        uploadImg();
         super.onActivityResult(requestCode, resultCode, data);
 
     }
@@ -412,7 +420,28 @@ public class RegistActivity extends BaseActivity {
         return new Response.Listener<String>() {
             @Override
             public void onResponse(String s) {
-                Log.v("xxxxxx", s);
+                pd.hide();
+                brandArray.clear();
+                JSONObject obj;
+                String str;
+                try {
+                    obj = new JSONObject(s);
+                    int num ;
+                    if(obj.getInt("brandnum")!=0) {
+                        num = obj.getInt("brandnum");
+                        JSONArray objArray = obj.getJSONArray("brand");
+                        for (int i = 0; i < num; i++) {
+                            obj = objArray.getJSONObject(i);
+                            brandArray.add(obj.getString("brand"));
+                            brandAdapter.notifyDataSetChanged();
+                        }
+                    }else{
+                        brandArray.add(" ");
+                        brandAdapter.notifyDataSetChanged();
+                    }
+                }catch (JSONException e){
+                    e.printStackTrace();
+                }
             }
         };
     }
