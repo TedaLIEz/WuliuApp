@@ -45,7 +45,10 @@ public class HisFragment extends Fragment {
         ContactsDB mDB = new ContactsDB(getActivity());
 
         list = mDB.getAll();
-        Log.v("name",list.get(0).getName());
+        if(list.isEmpty()){
+
+        }
+//        Log.v("name",list.get(0).getName());
         View view = inflater.inflate(R.layout.fragment_his, container, false);
         myHisAdapter = new MyHisAdapter(getActivity());
         mlist = (ListView)view.findViewById(R.id.mlist);
