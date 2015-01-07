@@ -91,7 +91,7 @@ public class MeFragment extends BaseFragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         //super.onCreateView(inflater, container, savedInstanceState);
-        View view = inflater.inflate(R.layout.fragment_me, null, false);
+        View view = inflater.inflate(R.layout.fragment_me, container, false);
 
 
         //v1 = this.getActivity().getLayoutInflater().inflate(R.layout.fragment_me_no, null);
