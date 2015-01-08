@@ -40,7 +40,7 @@ import java.util.Map;
  * Created by wei on 14-7-5.
  */
 public class MeFragment extends BaseFragment {
-
+    private TextView me_phone,me_vehicle,me_car_num,me_will,me_name;
     private SharedPreferences sp;
     private ProgressDialog pd;
     private String id;
@@ -98,7 +98,11 @@ public class MeFragment extends BaseFragment {
 
         //v1 = this.getActivity().getLayoutInflater().inflate(R.layout.fragment_me_no, null);
         //v2 = this.getActivity().getLayoutInflater().inflate(R.layout.fragment_me,null);
-
+          me_phone= (TextView) view.findViewById(R.id.me_phone);
+          me_car_num= (TextView) view.findViewById(R.id.me_car_num);
+          me_vehicle= (TextView) view.findViewById(R.id.me_vehicle);
+          me_will= (TextView) view.findViewById(R.id.me_will);
+          me_name= (TextView) view.findViewById(R.id.me_name);
 //        call_name = (TextView) view.findViewById(R.id.call_name);
 //        name = (TextView) view.findViewById(R.id.name);
 //        phone = (TextView) view.findViewById(R.id.phone);
@@ -133,21 +137,23 @@ public class MeFragment extends BaseFragment {
             public void onResponse(String s) {
                 //result = s;
                 pd.dismiss();
-                /*if (!s.isEmpty()) {
+                if (!s.isEmpty()) {
                     try {
                         JSONTokener jsonParser = new JSONTokener(s);
                         JSONObject obj = (JSONObject) jsonParser.nextValue();
-                        call_name.setText(obj.getString("name").substring(0, 1) + "先生");
-                        name.setText(obj.getString("name"));
-                        phone.setText(obj.getString("phone"));
-                        if(obj.getString("mail").equals("")) {
-                            mail.setText(obj.getString("mail"));
-                        }
+                        //call_name.setText(obj.getString("name").substring(0, 1) + "先生");
+                        me_name.setText(obj.getString("name"));
+                        me_phone.setText(obj.getString("phone"));
+                        me_vehicle.setText(obj.getString("ct"));
+                        me_will.setText(obj.getString("fp")+" "+obj.getString("fc")+"-"+obj.getString("tp"));
+//                        if(obj.getString("mail").equals("")) {
+//                            mail.setText(obj.getString("mail"));
+//                        }
                     } catch (JSONException e) {
                         e.toString();
                     }
                     //切换到登录状态
-                }*/
+                }
             }
         };
     }

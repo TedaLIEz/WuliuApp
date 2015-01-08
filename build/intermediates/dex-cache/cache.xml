@@ -2,25 +2,25 @@
 <items version="2" >
 
     <item
-        jar="/home/wei/project/WuliuApp/app/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.3/libs/internal_impl-21.0.3.jar"
-        jumboMode="false"
-        revision="19.1.0"
-        sha1="01ec05bfbafcc07646ba813000bf2ef11742dd03">
-        <dex dex="/home/wei/project/WuliuApp/app/build/intermediates/pre-dexed/debug/internal_impl-21.0.3-b4c7782ea44c9170d71c1a563be3e4766f954975.jar" />
-    </item>
-    <item
-        jar="/home/wei/project/WuliuApp/app/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.3/classes.jar"
+        jar="D:\WuliuApp\app\build\intermediates\exploded-aar\com.android.support\support-v4\21.0.3\classes.jar"
         jumboMode="false"
         revision="19.1.0"
         sha1="2c91c949a45a21cdecf26e03951e46c7beec9ad8">
-        <dex dex="/home/wei/project/WuliuApp/app/build/intermediates/pre-dexed/debug/classes-e33161942ce8e109d16def3bc74b76b32694c816.jar" />
+        <dex dex="D:\WuliuApp\app\build\intermediates\pre-dexed\debug\classes-e3d697bd4085c4dd9b6883358fc502204801604f.jar" />
     </item>
     <item
-        jar="/home/wei/sdk/extras/android/m2repository/com/android/support/support-annotations/21.0.3/support-annotations-21.0.3.jar"
+        jar="F:\AndroidSDK\extras\android\m2repository\com\android\support\support-annotations\21.0.3\support-annotations-21.0.3.jar"
         jumboMode="false"
         revision="19.1.0"
         sha1="4b74cefe1f0c1b819e7260c8627a14674e37fd35">
-        <dex dex="/home/wei/project/WuliuApp/app/build/intermediates/pre-dexed/debug/support-annotations-21.0.3-db12f982184a345b9b00cb10121ef4c8f3680d83.jar" />
+        <dex dex="D:\WuliuApp\app\build\intermediates\pre-dexed\debug\support-annotations-21.0.3-6b111e11ed5bafd0f02bb6b285babf50bc325654.jar" />
+    </item>
+    <item
+        jar="D:\WuliuApp\app\build\intermediates\exploded-aar\com.android.support\support-v4\21.0.3\libs\internal_impl-21.0.3.jar"
+        jumboMode="false"
+        revision="19.1.0"
+        sha1="01ec05bfbafcc07646ba813000bf2ef11742dd03">
+        <dex dex="D:\WuliuApp\app\build\intermediates\pre-dexed\debug\internal_impl-21.0.3-1091e6e9a0ffe3dd0e0965fec060c3e29c881604.jar" />
     </item>
 
 </items>
