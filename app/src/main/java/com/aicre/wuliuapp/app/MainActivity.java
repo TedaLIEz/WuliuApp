@@ -1,23 +1,37 @@
 package com.aicre.wuliuapp.app;
 
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
 import android.util.AttributeSet;
 
+import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.aicre.wuliuapp.app.activity.HisActivity;
 import com.aicre.wuliuapp.app.fragment.HisFragment;
 import com.aicre.wuliuapp.app.fragment.HomeFragment;
 import com.aicre.wuliuapp.app.fragment.MeFragment_no;
 import com.aicre.wuliuapp.app.fragment.RecommendFragment;
+import com.aicre.wuliuapp.app.fragment.SettingFragment;
+import com.aicre.wuliuapp.app.util.Globles;
+import com.aicre.wuliuapp.app.util.String2Request;
 import com.umeng.analytics.MobclickAgent;
 import com.umeng.fb.FeedbackAgent;
 import com.umeng.update.UmengUpdateAgent;
+
+import java.util.HashMap;
+import java.util.Map;
 
 
 public class MainActivity extends FragmentActivity {
@@ -25,7 +39,8 @@ public class MainActivity extends FragmentActivity {
     static private HomeFragment mFragmentFirst;
     static private RecommendFragment mFragmentSecond;
     static private MeFragment_no mFragmentThird;
-    static private HisFragment mFragmentForth;
+    //static private HisFragment mFragmentForth;
+    static private SettingFragment mFragmentForth;
 
     static private android.support.v4.app.FragmentManager mFragmentManager;
 
@@ -60,7 +75,8 @@ public class MainActivity extends FragmentActivity {
         mFragmentFirst = new HomeFragment() ;
         mFragmentSecond = new RecommendFragment() ;
         mFragmentThird = new MeFragment_no() ;
-        mFragmentForth = new HisFragment() ;
+        //mFragmentForth = new HisFragment() ;
+        mFragmentForth = new SettingFragment();
         this.getActionBar().setDisplayHomeAsUpEnabled(false);
         this.getActionBar().setDisplayUseLogoEnabled(false);
         this.getActionBar().setDisplayShowHomeEnabled(true);
@@ -188,7 +204,8 @@ public class MainActivity extends FragmentActivity {
                                 mImageViewThird.setImageDrawable(getResources().getDrawable(R.drawable.me))         ;
                                 mImageViewForth.setImageDrawable(getResources().getDrawable(R.drawable.setting_press)) ;
                                 if(mFragmentForth ==null) {
-                                    mFragmentForth = new HisFragment() ;
+                                    //mFragmentForth = new HisFragment() ;
+                                    mFragmentForth = new SettingFragment();
                                 }
                                 mFragmentManager.beginTransaction().replace(R.id.fragment_container ,mFragmentForth ).commit() ;
                                 break ;
@@ -222,5 +239,43 @@ public class MainActivity extends FragmentActivity {
         agent.startFeedbackActivity();
     }
 
+    public void myRecord(View view){
+        Intent intent=new Intent(MainActivity.this, HisActivity.class);
+        startActivity(intent);
+    }
+
+    /*
+    账户安全
+     */
+    public void accountSafety(View view){
+        AlertDialog.Builder dialog =new AlertDialog.Builder(this);
+        LayoutInflater inflater = (LayoutInflater)this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        LinearLayout layout = (LinearLayout)inflater.inflate(R.layout.dialog_passwd,null);
+        dialog.setView(layout);
+        final EditText new_passwd = (EditText)layout.findViewById(R.id.new_passwd);
+        final EditText old_passwd = (EditText)layout.findViewById(R.id.old_passwd);
+        dialog.setPositiveButton("确定",new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.dismiss();
+            }
+        });
+
+        dialog.show();
+    }
+
+    /*
+    关于我们
+     */
+    public void aboutUs(View view){
+
+    }
+
+    /*
+    帮助
+     */
+    public void Help(View view){
+
+    }
 
 }

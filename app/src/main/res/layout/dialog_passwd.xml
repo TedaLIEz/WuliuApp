@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+android:orientation="vertical" android:layout_width="fill_parent"
+android:layout_height="220dp">
+<TextView
+    android:layout_width="match_parent"
+    android:layout_height="60dp"
+    android:text="修改密码"
+    android:textColor="@color/text_color"
+    android:textSize="20sp"
+    android:paddingLeft="15dp"
+    android:gravity="center_vertical"/>
+<View
+    android:layout_alignParentTop="true"
+    android:layout_width="match_parent"
+    android:layout_height="2dp"
+    android:background="@color/text_color"
+    />
+<EditText
+    android:id="@+id/old_passwd"
+    android:hint="请输入旧密码"
+    android:layout_width="fill_parent"
+    android:layout_height="50dp"
+    android:paddingLeft="15dp"
+    android:background="@null"/>
+<View
+    android:layout_alignParentTop="true"
+    android:layout_width="match_parent"
+    android:layout_height="1dp"
+    android:background="@color/text_color"
+    />
+<EditText
+    android:hint="请输入新密码"
+    android:id="@+id/new_passwd"
+    android:background="@null"
+    android:paddingLeft="15dp"
+    android:layout_width="fill_parent"
+    android:layout_height="50dp" />
+<View
+    android:layout_alignParentTop="true"
+    android:layout_width="match_parent"
+    android:layout_height="1dp"
+    android:background="@color/text_color"
+    />
+    <EditText
+        android:hint="确认新密码"
+        android:id="@+id/con_passwd"
+        android:background="@null"
+        android:paddingLeft="15dp"
+        android:layout_width="fill_parent"
+        android:layout_height="50dp" />
+    <View
+        android:layout_alignParentTop="true"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/text_color"
+        />
+</LinearLayout>
