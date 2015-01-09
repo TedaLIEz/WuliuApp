@@ -81,7 +81,7 @@ public class MainActivity extends FragmentActivity {
         this.getActionBar().setDisplayUseLogoEnabled(false);
         this.getActionBar().setDisplayShowHomeEnabled(true);
         this.getActionBar().setDisplayShowTitleEnabled(true);
-        getSupportFragmentManager().beginTransaction().add(R.id.fragment_container,mFragmentFirst).commit() ;
+        getSupportFragmentManager().beginTransaction().add(R.id.fragment_container,mFragmentSecond).commit() ;
     }
 
     void findRelativeLayoutView(){

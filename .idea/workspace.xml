@@ -38,6 +38,11 @@
           <theme>@style/AppTheme</theme>
         </config>
       </layout>
+      <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_home.xml">
+        <config>
+          <theme>@style/AppTheme</theme>
+        </config>
+      </layout>
       <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_me.xml">
         <config>
           <theme>@style/AppTheme</theme>
@@ -63,18 +68,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" readonly="true" id="7cee6136-5097-4a00-8aa7-1cc95ca324cb" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/aicre/wuliuapp/app/activity/HisActivity.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/aicre/wuliuapp/app/fragment/SettingFragment.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_his.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/layout/dialog_passwd.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_setting.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/menu/menu_his.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/drawable-hdpi/arrow1.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/btn_notselected.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/btn_selected.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/btn_selector.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_recommand.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/layout/item_infor1.xml" />
+      <change type="DELETED" beforePath="D:\WuliuApp\app\src\main\res\layout\fragment_recommend.xml" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/aicre/wuliuapp/app/fragment/HomeFragment.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/aicre/wuliuapp/app/fragment/HomeFragment.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/aicre/wuliuapp/app/MainActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/aicre/wuliuapp/app/MainActivity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/aicre/wuliuapp/app/fragment/RecommendFragment.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/aicre/wuliuapp/app/fragment/RecommendFragment.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_me.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_me.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/values/colors.xml" afterPath="$PROJECT_DIR$/app/src/main/res/values/colors.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_home.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_home.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_setting.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_setting.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <list id="bb3f0b84-f0bd-4945-96c3-ec698edadb27" name="Failed commit: Default" comment="" />
@@ -144,21 +151,30 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="MeFragment.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/aicre/wuliuapp/app/fragment/MeFragment.java">
+      <file leaf-file-name="HomeFragment.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/aicre/wuliuapp/app/fragment/HomeFragment.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="3036" max-vertical-offset="3762">
-              <caret line="180" column="13" selection-start-line="180" selection-start-column="13" selection-end-line="180" selection-end-column="13" />
-              <folding />
+            <state vertical-scroll-proportion="0.0" vertical-offset="4914" max-vertical-offset="6930">
+              <caret line="315" column="5" selection-start-line="290" selection-start-column="4" selection-end-line="315" selection-end-column="5" />
+              <folding>
+                <element signature="e#6301#6302#0" expanded="true" />
+                <element signature="e#6370#6371#0" expanded="true" />
+                <element signature="e#6420#6421#0" expanded="true" />
+                <element signature="e#6462#6463#0" expanded="true" />
+                <element signature="e#6527#6528#0" expanded="true" />
+                <element signature="e#6576#6577#0" expanded="true" />
+                <element signature="e#6641#6642#0" expanded="true" />
+                <element signature="e#6680#6681#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="fragment_me.xml" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_me.xml">
+      <file leaf-file-name="fragment_recommand.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_recommand.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.3320158" vertical-offset="3660" max-vertical-offset="4246">
-              <caret line="174" column="0" selection-start-line="174" selection-start-column="0" selection-end-line="174" selection-end-column="0" />
+            <state vertical-scroll-proportion="-6.6363635" vertical-offset="947" max-vertical-offset="2046">
+              <caret line="53" column="42" selection-start-line="53" selection-start-column="42" selection-end-line="53" selection-end-column="42" />
               <folding />
             </state>
           </provider>
@@ -167,11 +183,63 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="MeFragment.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/aicre/wuliuapp/app/fragment/MeFragment.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="56" max-vertical-offset="3762">
+              <caret line="50" column="53" selection-start-line="50" selection-start-column="53" selection-end-line="50" selection-end-column="53" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="colors.xml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/res/values/colors.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="352">
-              <caret line="9" column="18" selection-start-line="9" selection-start-column="18" selection-end-line="9" selection-end-column="18" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="418">
+              <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="item_infor1.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/item_infor1.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-1.2424242" vertical-offset="1741" max-vertical-offset="2530">
+              <caret line="81" column="28" selection-start-line="81" selection-start-column="28" selection-end-line="81" selection-end-column="28" />
+              <folding />
+            </state>
+          </provider>
+          <provider editor-type-id="android-designer">
+            <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="RecommendFragment.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/aicre/wuliuapp/app/fragment/RecommendFragment.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="6636" max-vertical-offset="7810">
+              <caret line="366" column="0" selection-start-line="366" selection-start-column="0" selection-end-line="366" selection-end-column="0" />
+              <folding>
+                <element signature="e#4995#5349#0" expanded="true" />
+                <element signature="e#5338#5339#0" expanded="true" />
+                <element signature="e#5742#6200#0" expanded="true" />
+                <element signature="e#6189#6190#0" expanded="true" />
+                <element signature="e#7047#7063#0" expanded="true" />
+                <element signature="e#14631#15375#0" expanded="true" />
+                <element signature="e#15167#15183#0" expanded="true" />
+                <element signature="e#15364#15365#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SettingFragment.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/aicre/wuliuapp/app/fragment/SettingFragment.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="770">
+              <caret line="30" column="45" selection-start-line="30" selection-start-column="45" selection-end-line="30" selection-end-column="45" />
               <folding />
             </state>
           </provider>
@@ -180,13 +248,33 @@
       <file leaf-file-name="fragment_setting.xml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_setting.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="10.0" vertical-offset="2640" max-vertical-offset="4664">
-              <caret line="105" column="48" selection-start-line="105" selection-start-column="48" selection-end-line="105" selection-end-column="48" />
+            <state vertical-scroll-proportion="-1.3333334" vertical-offset="0" max-vertical-offset="4774">
+              <caret line="2" column="21" selection-start-line="2" selection-start-column="21" selection-end-line="2" selection-end-column="21" />
               <folding />
             </state>
           </provider>
           <provider editor-type-id="android-designer">
             <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MeFragment_no.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/aicre/wuliuapp/app/fragment/MeFragment_no.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="660" max-vertical-offset="1848">
+              <caret line="66" column="54" selection-start-line="66" selection-start-column="54" selection-end-line="66" selection-end-column="54" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MainActivity.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/aicre/wuliuapp/app/MainActivity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.3898305" vertical-offset="713" max-vertical-offset="5368">
+              <caret line="77" column="46" selection-start-line="77" selection-start-column="46" selection-end-line="77" selection-end-column="46" />
+              <folding />
+            </state>
           </provider>
         </entry>
       </file>
@@ -1156,13 +1244,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/app/src/main/java/com/aicre/wuliuapp/app/fragment/BaseFragment.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/aicre/wuliuapp/app/dao/ContactsDB.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/aicre/wuliuapp/app/db/DataBaseHelper.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/item_infor.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/item_his.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_his.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/aicre/wuliuapp/app/dao/Contacts.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_register_2.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/aicre/wuliuapp/app/util/PictureActivityUtil.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/http/RetryHandler.java" />
@@ -1170,7 +1251,6 @@
         <option value="$PROJECT_DIR$/app/src/main/res/menu/main.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/aicre/wuliuapp/app/view/XListView.java" />
         <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/aicre/wuliuapp/app/fragment/RecommendFragment.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_register_1.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/push_left_in.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/push_left_out.xml" />
@@ -1198,15 +1278,23 @@
         <option value="$PROJECT_DIR$/app/src/main/java/com/aicre/wuliuapp/app/activity/DetailActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/aicre/wuliuapp/app/activity/SearchActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/aicre/wuliuapp/app/activity/LoginActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_setting.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_his.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/aicre/wuliuapp/app/activity/HisActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/aicre/wuliuapp/app/fragment/HomeFragment.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/aicre/wuliuapp/app/fragment/SettingFragment.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/dialog_passwd.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/aicre/wuliuapp/app/MainActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_me.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/drawable/btn_selector.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_home.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/drawable/btn_notselected.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/drawable/btn_selected.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/item_infor1.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/values/colors.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_recommand.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/aicre/wuliuapp/app/fragment/HomeFragment.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/aicre/wuliuapp/app/fragment/RecommendFragment.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_setting.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/aicre/wuliuapp/app/MainActivity.java" />
       </list>
     </option>
   </component>
@@ -1577,11 +1665,11 @@
       <recent name="com.aicre.wuliuapp.app" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\WuliuApp\app\src\main\res\layout" />
+      <recent name="D:\WuliuApp\app\src\main\res\drawable-hdpi" />
       <recent name="$PROJECT_DIR$/app/src/main/res/drawable" />
       <recent name="$PROJECT_DIR$/app/src/main/res/drawable-hdpi" />
       <recent name="$PROJECT_DIR$/app/src/main/java" />
-      <recent name="$PROJECT_DIR$/app/libs" />
-      <recent name="$PROJECT_DIR$/app/src/main/java/com/aicre/wuliuapp/app/db" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/app/src/main/res/layout" />
@@ -1824,14 +1912,14 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.59288096" sideWeight="0.48983958" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.16417113" sideWeight="0.49944383" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.27462527" sideWeight="0.5005562" order="2" side_tool="false" content_ui="tabs" x="48" y="20" width="1089" height="676" />
+      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.38169163" sideWeight="0.5005562" order="2" side_tool="false" content_ui="tabs" x="48" y="20" width="1089" height="676" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2520138" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3289183" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.21518987" sideWeight="0.5" order="15" side_tool="false" content_ui="tabs" />
-      <window_info id="Android" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3406214" sideWeight="0.51016045" order="14" side_tool="false" content_ui="tabs" />
+      <window_info id="Android" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.0" sideWeight="0.51016045" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.21633554" sideWeight="0.4787234" order="9" side_tool="true" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21841542" sideWeight="0.5" order="4" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2146681" sideWeight="0.5" order="4" side_tool="false" content_ui="combo" />
       <window_info id="Memory Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32814237" sideWeight="0.5" order="16" side_tool="true" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3283582" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24906667" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -1869,15 +1957,15 @@
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Documentation" active="true" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" x="91" y="91" width="1738" height="850" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33672377" sideWeight="0.5005562" order="3" side_tool="false" content_ui="tabs" x="48" y="20" width="1089" height="676" />
+      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.38811564" sideWeight="0.5005562" order="3" side_tool="false" content_ui="tabs" x="48" y="20" width="1089" height="676" />
       <window_info id="REST Client" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3289183" sideWeight="0.5" order="17" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2520138" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3289183" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Thumbnails" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32968238" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.21518987" sideWeight="0.5" order="15" side_tool="false" content_ui="tabs" />
-      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.013808976" sideWeight="0.51016045" order="14" side_tool="false" content_ui="tabs" />
+      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3406214" sideWeight="0.51016045" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.21633554" sideWeight="0.4787234" order="9" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21841542" sideWeight="0.5" order="4" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2146681" sideWeight="0.5" order="4" side_tool="false" content_ui="combo" />
       <window_info id="Memory Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32814237" sideWeight="0.5" order="18" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3289183" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3283582" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -1911,134 +1999,11 @@
           <properties />
           <option name="timeStamp" value="9" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/com/aicre/wuliuapp/app/fragment/HomeFragment.java</url>
-          <line>177</line>
-          <properties />
-          <option name="timeStamp" value="10" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/com/aicre/wuliuapp/app/fragment/HomeFragment.java</url>
-          <line>242</line>
-          <properties />
-          <option name="timeStamp" value="12" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/com/aicre/wuliuapp/app/fragment/HomeFragment.java</url>
-          <line>186</line>
-          <properties />
-          <option name="timeStamp" value="13" />
-        </line-breakpoint>
       </breakpoints>
       <option name="time" value="14" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable-hdpi/grey_line.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="877">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable-hdpi/arrow.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable-hdpi/icon.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/color/me_line_selector.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="252">
-          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/aicre/wuliuapp/app/util/HttpUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.1319648" vertical-offset="0" max-vertical-offset="682">
-          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/app/libs/volley.jar!/com/android/volley/Response.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5325444" vertical-offset="0" max-vertical-offset="845">
-          <caret line="26" column="28" selection-start-line="26" selection-start-column="28" selection-end-line="26" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/aicre/wuliuapp/app/util/Globles.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="576">
-          <caret line="24" column="64" selection-start-line="24" selection-start-column="64" selection-end-line="24" selection-end-column="64" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/aicre/wuliuapp/app/Myapp.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.1984252" vertical-offset="0" max-vertical-offset="635">
-          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/dialog_choose.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="90" max-vertical-offset="954">
-          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_add.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1188" max-vertical-offset="2684">
-          <caret line="54" column="32" selection-start-line="54" selection-start-column="32" selection-end-line="54" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/layout_selector.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.11338583" vertical-offset="0" max-vertical-offset="635">
-          <caret line="4" column="57" selection-start-line="4" selection-start-column="57" selection-end-line="4" selection-end-column="57" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5239085" vertical-offset="0" max-vertical-offset="481">
-          <caret line="14" column="5" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="314" max-vertical-offset="792">
-          <caret line="29" column="37" selection-start-line="29" selection-start-column="37" selection-end-line="29" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/menu/welcome.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="877">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/menu/main.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.044265594" vertical-offset="66" max-vertical-offset="814">
@@ -2124,17 +2089,6 @@
           <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
           <folding />
         </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_recommend.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="849">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/menu/login.xml">
@@ -2234,28 +2188,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.0993915" vertical-offset="2582" max-vertical-offset="3586">
-          <caret line="142" column="57" selection-start-line="142" selection-start-column="57" selection-end-line="142" selection-end-column="57" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_home.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.22312373" vertical-offset="0" max-vertical-offset="493">
-          <caret line="5" column="25" selection-start-line="5" selection-start-column="25" selection-end-line="5" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/aicre/wuliuapp/app/activity/HisActivity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2486">
@@ -2266,14 +2198,6 @@
             <element signature="e#3647#3648#0" expanded="true" />
             <element signature="e#3686#3687#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/aicre/wuliuapp/app/fragment/MeFragment_no.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="660" max-vertical-offset="1848">
-          <caret line="66" column="54" selection-start-line="66" selection-start-column="54" selection-end-line="66" selection-end-column="54" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2297,36 +2221,6 @@
       </provider>
       <provider editor-type-id="android-designer">
         <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/aicre/wuliuapp/app/fragment/SettingFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7717996" vertical-offset="68" max-vertical-offset="770">
-          <caret line="30" column="46" selection-start-line="30" selection-start-column="46" selection-end-line="30" selection-end-column="46" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/aicre/wuliuapp/app/fragment/HomeFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="4895" max-vertical-offset="6688">
-          <caret line="287" column="0" selection-start-line="287" selection-start-column="0" selection-end-line="287" selection-end-column="0" />
-          <folding>
-            <element signature="e#6526#6527#0" expanded="true" />
-            <element signature="e#6575#6576#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/aicre/wuliuapp/app/MainActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="4512" max-vertical-offset="5478">
-          <caret line="250" column="36" selection-start-line="250" selection-start-column="36" selection-end-line="250" selection-end-column="36" />
-          <folding>
-            <element signature="e#13332#13520#0" expanded="true" />
-            <element signature="e#13509#13510#0" expanded="true" />
-          </folding>
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_me_no.xml">
@@ -2359,26 +2253,222 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/aicre/wuliuapp/app/fragment/MeFragment.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_me.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="3036" max-vertical-offset="3762">
-          <caret line="180" column="13" selection-start-line="180" selection-start-column="13" selection-end-line="180" selection-end-column="13" />
+        <state vertical-scroll-proportion="0.9130435" vertical-offset="0" max-vertical-offset="4246">
+          <caret line="21" column="32" selection-start-line="21" selection-start-column="32" selection-end-line="21" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/selected_state.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.10538922" vertical-offset="0" max-vertical-offset="835">
+          <caret line="4" column="8" selection-start-line="4" selection-start-column="8" selection-end-line="4" selection-end-column="8" />
           <folding />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/layout_selector.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.10705596" vertical-offset="0" max-vertical-offset="822">
+          <caret line="4" column="49" selection-start-line="4" selection-start-column="49" selection-end-line="4" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/unselected_state.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="526">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/item_his.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3840399" vertical-offset="0" max-vertical-offset="968">
+          <caret line="14" column="32" selection-start-line="14" selection-start-column="32" selection-end-line="14" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/dimens.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.10538922" vertical-offset="0" max-vertical-offset="835">
+          <caret line="4" column="17" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable-hdpi/arrow.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-29.60606" vertical-offset="57" max-vertical-offset="3608">
+          <caret line="47" column="21" selection-start-line="47" selection-start-column="21" selection-end-line="47" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/aicre/wuliuapp/app/Myapp.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.2857143" vertical-offset="0" max-vertical-offset="539">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/item_infor.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-7.969697" vertical-offset="881" max-vertical-offset="3124">
+          <caret line="52" column="17" selection-start-line="52" selection-start-column="17" selection-end-line="52" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/aicre/wuliuapp/app/fragment/MeFragment_no.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="660" max-vertical-offset="1848">
+          <caret line="66" column="54" selection-start-line="66" selection-start-column="54" selection-end-line="66" selection-end-column="54" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/btn_notselected.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="242">
+          <caret line="4" column="30" selection-start-line="4" selection-start-column="30" selection-end-line="4" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/btn_selected.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="242">
+          <caret line="4" column="30" selection-start-line="4" selection-start-column="30" selection-end-line="4" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/btn_selector.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.10705596" vertical-offset="0" max-vertical-offset="822">
+          <caret line="4" column="42" selection-start-line="4" selection-start-column="42" selection-end-line="4" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/item_infor1.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.2424242" vertical-offset="1741" max-vertical-offset="2530">
+          <caret line="81" column="28" selection-start-line="81" selection-start-column="28" selection-end-line="81" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/values/colors.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="352">
-          <caret line="9" column="18" selection-start-line="9" selection-start-column="18" selection-end-line="9" selection-end-column="18" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="418">
+          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_home.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-8.0" vertical-offset="0" max-vertical-offset="594">
+          <caret line="12" column="44" selection-start-line="12" selection-start-column="44" selection-end-line="12" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_recommand.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-6.6363635" vertical-offset="947" max-vertical-offset="2046">
+          <caret line="53" column="42" selection-start-line="53" selection-start-column="42" selection-end-line="53" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/aicre/wuliuapp/app/fragment/MeFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="56" max-vertical-offset="3762">
+          <caret line="50" column="53" selection-start-line="50" selection-start-column="53" selection-end-line="50" selection-end-column="53" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/aicre/wuliuapp/app/fragment/HomeFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="4914" max-vertical-offset="6930">
+          <caret line="315" column="5" selection-start-line="290" selection-start-column="4" selection-end-line="315" selection-end-column="5" />
+          <folding>
+            <element signature="e#6301#6302#0" expanded="true" />
+            <element signature="e#6370#6371#0" expanded="true" />
+            <element signature="e#6420#6421#0" expanded="true" />
+            <element signature="e#6462#6463#0" expanded="true" />
+            <element signature="e#6527#6528#0" expanded="true" />
+            <element signature="e#6576#6577#0" expanded="true" />
+            <element signature="e#6641#6642#0" expanded="true" />
+            <element signature="e#6680#6681#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/aicre/wuliuapp/app/fragment/RecommendFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="6636" max-vertical-offset="7810">
+          <caret line="366" column="0" selection-start-line="366" selection-start-column="0" selection-end-line="366" selection-end-column="0" />
+          <folding>
+            <element signature="e#4995#5349#0" expanded="true" />
+            <element signature="e#5338#5339#0" expanded="true" />
+            <element signature="e#5742#6200#0" expanded="true" />
+            <element signature="e#6189#6190#0" expanded="true" />
+            <element signature="e#7047#7063#0" expanded="true" />
+            <element signature="e#14631#15375#0" expanded="true" />
+            <element signature="e#15167#15183#0" expanded="true" />
+            <element signature="e#15364#15365#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/aicre/wuliuapp/app/fragment/SettingFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="770">
+          <caret line="30" column="45" selection-start-line="30" selection-start-column="45" selection-end-line="30" selection-end-column="45" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_setting.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="10.0" vertical-offset="2640" max-vertical-offset="4664">
-          <caret line="105" column="48" selection-start-line="105" selection-start-column="48" selection-end-line="105" selection-end-column="48" />
+        <state vertical-scroll-proportion="-1.3333334" vertical-offset="0" max-vertical-offset="4774">
+          <caret line="2" column="21" selection-start-line="2" selection-start-column="21" selection-end-line="2" selection-end-column="21" />
           <folding />
         </state>
       </provider>
@@ -2386,15 +2476,12 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_me.xml">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/aicre/wuliuapp/app/MainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3320158" vertical-offset="3660" max-vertical-offset="4246">
-          <caret line="174" column="0" selection-start-line="174" selection-start-column="0" selection-end-line="174" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.3898305" vertical-offset="713" max-vertical-offset="5368">
+          <caret line="77" column="46" selection-start-line="77" selection-start-column="46" selection-end-line="77" selection-end-column="46" />
           <folding />
         </state>
-      </provider>
-      <provider editor-type-id="android-designer">
-        <state />
       </provider>
     </entry>
   </component>

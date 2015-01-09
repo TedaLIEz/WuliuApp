@@ -53,6 +53,7 @@ import java.util.Map;
  */
 public class HomeFragment extends BaseFragment implements XListView.IXListViewListener{
     private ArrayList<HashMap<String, String>> list;
+
     private MyBaseAdapter mMyBaseAdapter;
     private XListView mLIstView;
     private SimpleDateFormat format;
@@ -64,7 +65,7 @@ public class HomeFragment extends BaseFragment implements XListView.IXListViewLi
         super.onCreate(savedInstanceState);
         ActionBar bar = getActivity().getActionBar();
         setHasOptionsMenu(true);
-        bar.setTitle("首页");
+        bar.setTitle("全部");
         //bar.setIcon(R.drawable.icon);
         //bar.setIcon(R.drawable.icon);
         setHasOptionsMenu(true);
@@ -197,18 +198,19 @@ public class HomeFragment extends BaseFragment implements XListView.IXListViewLi
 
             ViewHolder holder;
             if (convertView == null) {
-                convertView = mInflater.inflate(R.layout.item_infor,null);
+                convertView = mInflater.inflate(R.layout.item_infor1,null);
                 holder = new ViewHolder();
                 holder.mStart = (TextView)convertView.findViewById(R.id.start);
                 holder.mDestination = (TextView)convertView.findViewById(R.id.destination);
-                holder.mKindCargo = (TextView) convertView.findViewById(R.id.kind_cargo);
-                holder.mKindCar = (TextView) convertView.findViewById(R.id.kind_car);
+//                holder.mKindCargo = (TextView) convertView.findViewById(R.id.kind_cargo);
+//                holder.mKindCar = (TextView) convertView.findViewById(R.id.kind_car);
                 holder.mWeight = (TextView) convertView.findViewById(R.id.weight);
                 holder.mLength = (TextView) convertView.findViewById(R.id.length);
-                holder.mContectMan = (TextView) convertView.findViewById(R.id.contact_man);
-                holder.mNumber = (TextView) convertView.findViewById(R.id.number);
+                holder.mTiji = (TextView) convertView.findViewById(R.id.tiji);     //车体积
+//                holder.mContectMan = (TextView) convertView.findViewById(R.id.contact_man);
+//                holder.mNumber = (TextView) convertView.findViewById(R.id.number);
                 holder.mTime = (TextView) convertView.findViewById(R.id.time);
-                holder.mBtn = (Button)convertView.findViewById(R.id.mbtn);
+//                holder.mBtn = (Button)convertView.findViewById(R.id.mbtn);
                 convertView.setTag(holder);
             }else{
                 holder = (ViewHolder) convertView.getTag();
@@ -235,45 +237,45 @@ public class HomeFragment extends BaseFragment implements XListView.IXListViewLi
                 holder.mDestination.setText(map.get("tp")+map.get("tc"));
             }
 
-            holder.mKindCargo.setText(map.get("gn"));
-            holder.mKindCar.setText(map.get("ct"));
+//            holder.mKindCargo.setText(map.get("gn"));
+//           holder.mKindCar.setText(map.get("ct"));
 
             String dan[] = map.get("gm").split("/");
             if(!map.get("gw").equals("")) {
                 holder.mWeight.setText(map.get("gw") + dan[1]);     //java.lang.ArrayIndexOutOfBoundsException: length=1; index=1
             }
             holder.mLength.setText(map.get("cs"));
-            holder.mContectMan.setText(map.get("name"));
-            holder.mNumber.setText(map.get("phone"));
+//            holder.mContectMan.setText(map.get("name"));
             if(!map.get("date").equals("")) {
                 String a[] = map.get("date").split("/");
                 String date = a[2] + "-" + a[0] + "-" + a[1];
                 holder.mTime.setText(date);
             }
-            holder.mBtn.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    String str = "tel:"+map.get("phone");
-
-                    /*
-                    添加数据库
-                     */
-                    ContactsDB mDB = new ContactsDB(getActivity());
-                    SimpleDateFormat formatter = new SimpleDateFormat ("yyyy年MM月dd日 HH:mm:ss");
-                    Date curDate = new Date(System.currentTimeMillis());//获取当前时间
-                    String time = formatter.format(curDate);
-                    mDB.add(new Contacts(Integer.parseInt(map.get("id")),map.get("name"),map.get("phone"),time ));
-
-                    Intent i = new Intent("android.intent.action.DIAL", Uri.parse(str));
-                    startActivity(i);
-                }
-            });
+//            holder.mBtn.setOnClickListener(new View.OnClickListener() {
+//                @Override
+//                public void onClick(View v) {
+//                    String str = "tel:"+map.get("phone");
+//
+//                    /*
+//                    添加数据库
+//                     */
+//                    ContactsDB mDB = new ContactsDB(getActivity());
+//                    SimpleDateFormat formatter = new SimpleDateFormat ("yyyy年MM月dd日 HH:mm:ss");
+//                    Date curDate = new Date(System.currentTimeMillis());//获取当前时间
+//                    String time = formatter.format(curDate);
+//                    mDB.add(new Contacts(Integer.parseInt(map.get("id")),map.get("name"),map.get("phone"),time ));
+//
+//                    Intent i = new Intent("android.intent.action.DIAL", Uri.parse(str));
+//                    startActivity(i);
+//                }
+//            });
             return convertView;
         }
     }
 
     /**存放控件*/
     public final class ViewHolder{
+        public TextView mTiji;
         public TextView mStart;
         public TextView mDestination;
         public TextView mKindCargo;

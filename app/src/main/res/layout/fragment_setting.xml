@@ -16,10 +16,15 @@
             android:layout_marginLeft="10dp"
             android:layout_marginBottom="3dp"
             android:layout_height="match_parent"
-            android:text="用户账户"
+            android:text="用户"
 
             android:gravity="bottom"/>
         </RelativeLayout>
+    <View
+        android:layout_alignParentTop="true"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#c9c9c9" />
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="60dp"
