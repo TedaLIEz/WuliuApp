@@ -8,7 +8,7 @@ public class Globles {
 
     public static String BASE_URL = "http://www.56huowu.com/php/";
 
-    public static String LOGIN_URL = BASE_URL+"user_login.php";
+    public static String LOGIN_URL = TEST_URL+"user_login.php";
 
     public static String INFOLIST_URL = BASE_URL+"info_list.php";
 

@@ -67,7 +67,10 @@ public class LoginActivity extends BaseActivity{
                         }
 
                     });
+                }else{
+                    Toast.makeText(LoginActivity.this,"以上内容不能为空",Toast.LENGTH_SHORT).show();
                 }
+
 
             }
         });
@@ -104,7 +107,8 @@ public class LoginActivity extends BaseActivity{
             public void onResponse(String s) {
                 //result = s;
                 pd.dismiss();
-               if(!s.trim().equals("fail")){
+                Log.v("id",s);
+               if(!s.trim().equals("0")){
                    SharedPreferences sharedPreferences = getSharedPreferences("56huowu", Context.MODE_PRIVATE);
                    SharedPreferences.Editor editor = sharedPreferences.edit();//获取编辑器
                    editor.putString("id",s.trim());
@@ -118,8 +122,5 @@ public class LoginActivity extends BaseActivity{
         };
     }
 
-    @Override
-    public ActionBar getSupportActionBar() {
-        return super.getSupportActionBar();
-    }
+
 }
