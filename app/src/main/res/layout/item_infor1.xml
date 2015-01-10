@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingTop="12dp"
+    android:paddingLeft="25dp"
+    android:paddingRight="25dp"
+    android:paddingBottom="8dp"
+    >
+
+    <LinearLayout
+        android:id="@+id/firstLine"
+
+        android:paddingTop="2dp"
+        android:paddingBottom="2dp"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/start"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:text="无"
+            android:textColor="@color/_black"
+            android:textSize="@dimen/big_text"
+            android:typeface="sans"></TextView>
+
+        <ImageView
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:id="@+id/arrow"
+
+
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:src="@drawable/arrow1"/>
+
+
+        <TextView
+            android:id="@+id/destination"
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/_black"
+            android:text="无"
+            android:textSize="@dimen/big_text" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_marginTop="2dp"
+        android:paddingBottom="2dp"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/weight"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="无"
+            android:textColor="@color/_black"
+            android:textSize="@dimen/big_text" />
+
+        <TextView
+            android:id="@+id/tiji"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="无"
+            android:textColor="@color/_black"
+            android:textSize="@dimen/big_text" />
+
+        <TextView
+            android:id="@+id/length"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="无"
+            android:textColor="@color/_black"
+            android:textSize="@dimen/big_text" />
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"></LinearLayout>
+
+
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_marginTop="3dp"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="无"
+            android:textColor="@color/button_gray"
+            android:textSize="12dp"
+            android:typeface="sans" />
+   </RelativeLayout>
+
+
+</LinearLayout>

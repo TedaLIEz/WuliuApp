@@ -1,5 +1,6 @@
 package com.aicre.wuliuapp.app.activity;
 
+import android.app.ActionBar;
 import android.app.Activity;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
@@ -13,9 +14,19 @@ public class SearchActivity  extends Activity{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search);
+        ActionBar bar=getActionBar();
+        bar.setDisplayHomeAsUpEnabled(true);
     }
 
-
-
-
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()){
+            case android.R.id.home:
+                finish();
+                break;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+        return super.onOptionsItemSelected(item);
+    }
 }

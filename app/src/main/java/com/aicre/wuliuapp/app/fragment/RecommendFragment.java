@@ -1,19 +1,28 @@
 package com.aicre.wuliuapp.app.fragment;
 
 import android.app.ActionBar;
+import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.location.Address;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.view.MenuItemCompat;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -45,6 +54,9 @@ import java.util.Map;
  */
 public class RecommendFragment extends BaseFragment implements XListView.IXListViewListener{
     private ArrayList<HashMap<String,String>> list;
+    private Button mBtn;
+    private MeFragment mefragment;
+    static private FragmentManager mFragmentManager;
     private MyBaseAdapter mMyBaseAdapter;
     private XListView mListView;
     private String address;
@@ -62,7 +74,7 @@ public class RecommendFragment extends BaseFragment implements XListView.IXListV
 
         ActionBar bar = getActivity().getActionBar();
 
-        bar.setTitle("推荐");
+        bar.setTitle("首页");
         pd = new ProgressDialog(this.getActivity());
         pd.setProgressStyle(ProgressDialog.STYLE_SPINNER);
         pd.setMessage("加载中...");
@@ -120,8 +132,19 @@ public class RecommendFragment extends BaseFragment implements XListView.IXListV
         super.onCreateView(inflater, container,savedInstanceState);
         list = new ArrayList<HashMap<String, String>>();
 
-        View view = inflater.inflate(R.layout.fragment_home, null, false);
+        View view = inflater.inflate(R.layout.fragment_recommand, null, false);
         mListView = (XListView) view.findViewById(R.id.lei_x_list_view);
+        mBtn=(Button)view.findViewById(R.id.btn_person);
+        mBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(mefragment==null){
+                    mefragment = new MeFragment();
+                }
+                getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,mefragment).commit();
+            }
+        });
+
         mMyBaseAdapter = new MyBaseAdapter(getActivity().getBaseContext());
         mListView.setAdapter(mMyBaseAdapter);
         mListView.setXListViewListener(this);
@@ -206,18 +229,19 @@ public class RecommendFragment extends BaseFragment implements XListView.IXListV
         public View getView(int position, View convertView, ViewGroup parent) {
             ViewHolder holder;
             if (convertView == null) {
-                convertView = mInflater.inflate(R.layout.item_infor, null);
+                convertView = mInflater.inflate(R.layout.item_infor1, null);
                 holder = new ViewHolder();
                 holder.mStart = (TextView) convertView.findViewById(R.id.start);
                 holder.mDestination = (TextView) convertView.findViewById(R.id.destination);
-                holder.mKindCargo = (TextView) convertView.findViewById(R.id.kind_cargo);
-                holder.mKindCar = (TextView) convertView.findViewById(R.id.kind_car);
+                holder.mTiji=(TextView)convertView.findViewById(R.id.tiji);
+//                holder.mKindCargo = (TextView) convertView.findViewById(R.id.kind_cargo);
+//                holder.mKindCar = (TextView) convertView.findViewById(R.id.kind_car);
                 holder.mWeight = (TextView) convertView.findViewById(R.id.weight);
                 holder.mLength = (TextView) convertView.findViewById(R.id.length);
-                holder.mContectMan = (TextView) convertView.findViewById(R.id.contact_man);
-                holder.mNumber = (TextView) convertView.findViewById(R.id.number);
+//                holder.mContectMan = (TextView) convertView.findViewById(R.id.contact_man);
+//                holder.mNumber = (TextView) convertView.findViewById(R.id.number);
                 holder.mTime = (TextView) convertView.findViewById(R.id.time);
-                holder.mBtn = (Button) convertView.findViewById(R.id.mbtn);
+//                holder.mBtn = (Button) convertView.findViewById(R.id.mbtn);
                 convertView.setTag(holder);
             } else {
                 holder = (ViewHolder) convertView.getTag();
@@ -246,35 +270,36 @@ public class RecommendFragment extends BaseFragment implements XListView.IXListV
 
 //            holder.mStart.setText(map.get("fp") + map.get("fc"));
 //            holder.mDestination.setText(map.get("tp") + map.get("tc"));
-            holder.mKindCargo.setText(map.get("gn"));
-            holder.mKindCar.setText(map.get("ct"));
+//            holder.mKindCargo.setText(map.get("gn"));
+//            holder.mKindCar.setText(map.get("ct"));
 
             String dan[] = map.get("gm").split("/");
             if (!map.get("gw").equals("")) {
                 holder.mWeight.setText(map.get("gw") + dan[1]);
             }
             holder.mLength.setText(map.get("cs"));
-            holder.mContectMan.setText(map.get("name"));
-            holder.mNumber.setText(map.get("phone"));
+//            holder.mContectMan.setText(map.get("name"));
+//            holder.mNumber.setText(map.get("phone"));
             if (!map.get("date").equals("")) {
                 String a[] = map.get("date").split("/");
                 String date = a[2] + "-" + a[0] + "-" + a[1];
                 holder.mTime.setText(date);
             }
-            holder.mBtn.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    String str = "tel:" + map.get("phone");
-                    Intent i = new Intent("android.intent.action.DIAL", Uri.parse(str));
-                    startActivity(i);
-                }
-            });
+//            holder.mBtn.setOnClickListener(new View.OnClickListener() {
+//                @Override
+//                public void onClick(View v) {
+//                    String str = "tel:" + map.get("phone");
+//                    Intent i = new Intent("android.intent.action.DIAL", Uri.parse(str));
+//                    startActivity(i);
+//                }
+//            });
             return convertView;
         }
     }
 
     /**存放控件*/
     public final class ViewHolder{
+        public TextView mTiji;
         public TextView mStart;
         public TextView mDestination;
         public TextView mKindCargo;
@@ -334,4 +359,51 @@ public class RecommendFragment extends BaseFragment implements XListView.IXListV
         super.onPause();
         MobclickAgent.onPageEnd("RecommendFragment");
     }
+    @Override
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+        super.onCreateOptionsMenu(menu, inflater);
+        inflater.inflate(R.menu.main, menu);
+        MenuItemCompat.setShowAsAction(menu.findItem(R.id.action_search), MenuItemCompat.SHOW_AS_ACTION_ALWAYS);
+
+
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.action_search:
+                search();
+            default:
+                break;
+
+        }
+        return super.onOptionsItemSelected(item);
+    }
+    public void search(){
+        AlertDialog.Builder dialog =new AlertDialog.Builder(this.getActivity());
+        LayoutInflater inflater = (LayoutInflater)this.getActivity().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        LinearLayout layout = (LinearLayout)inflater.inflate(R.layout.dialog_search,null);
+        dialog.setView(layout);
+        final EditText start_edit = (EditText)layout.findViewById(R.id.start_address);
+        final EditText finish_edit = (EditText)layout.findViewById(R.id.finish_address);
+        dialog.setPositiveButton("搜索",new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                final String start = start_edit.getText().toString();
+                final String finish = finish_edit.getText().toString();
+                executeRequest(new String2Request(Globles.INFOLIST_URL,"utf-8" , responseListener(),
+                        errorListener()){
+                    protected Map<String,String> getParams(){
+                        Map<String,String> m = new HashMap<String, String>();
+                        m.put("from",start);
+                        m.put("to",finish);
+                        return m;
+                    }
+                });
+            }
+        });
+
+        dialog.show();
+    }
+
 }
