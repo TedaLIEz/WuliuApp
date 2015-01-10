@@ -18,12 +18,17 @@ import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
+import android.view.animation.AnimationUtils;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Gallery;
 import android.widget.ImageButton;
 import android.widget.ImageSwitcher;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.Switch;
@@ -43,16 +48,20 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import android.widget.Gallery.LayoutParams;
+
 import java.io.ByteArrayOutputStream;
 import java.io.File;
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.logging.Handler;
 
-public class RegistActivity extends BaseActivity {
+import android.widget.AdapterView.OnItemSelectedListener;
+import android.widget.ViewSwitcher;
+
+public class RegistActivity extends BaseActivity implements OnItemSelectedListener, ViewSwitcher.ViewFactory {
 
 
     private static final int PHOTO_REQUEST_CAMERA = 1;// 拍照
@@ -83,6 +92,7 @@ public class RegistActivity extends BaseActivity {
     private Spinner regist_card_2;
     private Spinner regist_type;
     private ImageSwitcher type_photo;
+    private Gallery mGallery;
 
 
     private EditText regist_long;
@@ -100,9 +110,9 @@ public class RegistActivity extends BaseActivity {
     private String name;
     private String card;
     private String type;
-    private int length;
-    private int weight;
-    private int volume;
+    private String length;
+    private String weight;
+    private String volume;
     private String brand;
     private String model;
     private String remarks;
@@ -119,6 +129,32 @@ public class RegistActivity extends BaseActivity {
 
     private static final String PHOTO_FILE_NAME = "temp_photo.jpg";
     private File tempFile;
+
+    private Integer[] mThumbIds;
+    private Integer[] mImageIds;
+    private ImageAdapter mAdapter;
+    private Integer[] mThumbIds1 = {R.drawable.car_1, R.drawable.car_2,
+            R.drawable.car_3,
+    };
+
+    private Integer[] mThumbIds2 = {R.drawable.car_4, R.drawable.car_5,
+            R.drawable.car_6, R.drawable.car_7, R.drawable.car_8, R.drawable.car_9, R.drawable.car_10, R.drawable.car_11, R.drawable.car_12,
+    };
+    private Integer[] mThumbIds3 = {R.drawable.car_1, R.drawable.car_2,
+            R.drawable.car_3,
+    };
+    private Integer[] mThumbIds4 = {R.drawable.car_1, R.drawable.car_2,
+            R.drawable.car_3,
+    };
+
+    private Integer[] mImageIds1 = {R.drawable.car_1, R.drawable.car_2,
+            R.drawable.car_3,};
+    private Integer[] mImageIds2 = {R.drawable.car_4, R.drawable.car_5,
+            R.drawable.car_6, R.drawable.car_7, R.drawable.car_8, R.drawable.car_9, R.drawable.car_10, R.drawable.car_11, R.drawable.car_12,};
+    private Integer[] mImageIds3 = {R.drawable.car_1, R.drawable.car_2,
+            R.drawable.car_3,};
+    private Integer[] mImageIds4 = {R.drawable.car_1, R.drawable.car_2,
+            R.drawable.car_3,};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -137,26 +173,66 @@ public class RegistActivity extends BaseActivity {
         pd.setProgressStyle(ProgressDialog.STYLE_SPINNER);
         pd.setMessage("提交信息中...");
 
+        regist_phone = (EditText) findViewById(R.id.regist_phone);
+        regist_code = (EditText) findViewById(R.id.regist_code);
+        regist_psw = (EditText) findViewById(R.id.regist_psw);
+        regist_repsw = (EditText) findViewById(R.id.regist_repsw);
+        verifyBtn = (Button)findViewById(R.id.verifybtn);
+        verifyBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (!regist_phone.getText().toString().equals("")) {
+                    executeRequest(new String2Request(Globles.GET_CODE, "utf-8", coderesponseListener(),
+                            errorListener()) {
+                        protected Map<String, String> getParams() {
+                            Map<String, String> m = new HashMap<String, String>();
+                            m.put("phone", regist_phone.getText().toString());
+                            return m;
+                        }
+
+                    });
+                } else {
+                    Toast.makeText(RegistActivity.this, "手机号不能为空", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
 
         regist_name = (EditText) findViewById(R.id.regist_name);
         regist_card_3 = (EditText) findViewById(R.id.regist_card_3);
-
         regist_card_1 = (Spinner) findViewById(R.id.regist_card_1);
-
         regist_card_1.setAdapter(new ArrayAdapter<String>(RegistActivity.this, android.R.layout.simple_spinner_dropdown_item, new String[]{"皖", "澳", "京", "闽", "甘", "粤", "桂", "贵", "琼", "冀", "豫", "黑", "鄂", "湘", "吉", "苏", "赣", "辽", "蒙", "宁", "青", "鲁", "晋", "陕", "沪", "川", "台", "津", "藏", "港", "新", "云", "浙", "渝"}));
-
         regist_card_2 = (Spinner) findViewById(R.id.regist_card_2);
         regist_card_2.setAdapter(new ArrayAdapter<String>(RegistActivity.this, android.R.layout.simple_spinner_dropdown_item, new String[]{"A", "B", "C", "D", "E", "F", "G", "H", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"}));
-//        regist_card_2.setAdapter(new ArrayAdapter<String>(RegistActivity.this, android.R.layout.simple_spinner_dropdown_item, brandArray));
-
-
         regist_type = (Spinner) findViewById(R.id.regist_type);
         regist_type.setAdapter(new ArrayAdapter<String>(RegistActivity.this, android.R.layout.simple_spinner_dropdown_item, new String[]{"载货车", "挂车", "微面及全封闭式货车", "特种车辆"}));
 
+        mThumbIds = new Integer[]{};
+        mImageIds = new Integer[]{};
         regist_type.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, final int position, long id) {
                 pd.show();
+                switch (position) {
+                    case 0:
+                        mThumbIds = mThumbIds1;
+                        mImageIds = mImageIds1;
+                        break;
+                    case 1:
+                        mThumbIds = mThumbIds2;
+                        mImageIds = mImageIds2;
+                        break;
+                    case 2:
+                        mThumbIds = mThumbIds3;
+                        mImageIds = mImageIds3;
+                        break;
+                    case 3:
+                        mThumbIds = mThumbIds4;
+                        mImageIds = mImageIds4;
+                        break;
+                    default:
+                }
+                mAdapter.notifyDataSetChanged();
+//                type_photo.setImageResource(mImageIds[position]);
                 executeRequest(new String2Request(Globles.GET_MODEL, "utf-8", modelresponseListener(),
                         errorListener()) {
                     protected Map<String, String> getParams() {
@@ -176,6 +252,15 @@ public class RegistActivity extends BaseActivity {
 
 
         type_photo = (ImageSwitcher) findViewById(R.id.type_photo);
+        type_photo.setFactory(this);
+        type_photo.setInAnimation(AnimationUtils.loadAnimation(this,
+                android.R.anim.fade_in));
+        type_photo.setOutAnimation(AnimationUtils.loadAnimation(this,
+                android.R.anim.fade_out));
+        mGallery = (Gallery) findViewById(R.id.gallery);
+        mAdapter = new ImageAdapter(this);
+        mGallery.setAdapter(mAdapter);
+        mGallery.setOnItemSelectedListener(this);
 
         regist_long = (EditText) findViewById(R.id.regist_long);
         regist_weight = (EditText) findViewById(R.id.regist_weight);
@@ -200,8 +285,10 @@ public class RegistActivity extends BaseActivity {
         page_num = 0;
         pro = new ArrayList<String>();
 
-        brandAdapter = new ArrayAdapter<String>(RegistActivity.this,android.R.layout.simple_spinner_dropdown_item,brandArray);
+        brandAdapter = new ArrayAdapter<String>(RegistActivity.this, android.R.layout.simple_spinner_dropdown_item, brandArray);
         regist_brand.setAdapter(brandAdapter);
+
+
     }
 
 
@@ -293,13 +380,34 @@ public class RegistActivity extends BaseActivity {
         psw = regist_psw.getText().toString();
         name = regist_name.getText().toString();
         card = regist_card_1.getSelectedItem().toString() + regist_card_2.getSelectedItem().toString() + regist_card_3.getText().toString();
+
         type = regist_type.getSelectedItem().toString();
-        length = Integer.getInteger(regist_long.getText().toString());
-        weight = Integer.getInteger(regist_weight.getText().toString());
-        volume = Integer.getInteger(regist_weight.getText().toString());
+        length = regist_long.getText().toString();
+        weight = regist_weight.getText().toString();
+        volume =regist_volume.getText().toString();
         brand = regist_brand.getSelectedItem().toString();
         remarks = regist_remarks.getText().toString();
 
+        executeRequest(new String2Request(Globles.REGISTER_URL, "utf-8", responseListener(),
+                errorListener()) {
+            protected Map<String, String> getParams() {
+                Map<String, String> m = new HashMap<String, String>();
+                m.put("username", phone);
+                m.put("password", psw);
+                m.put("type", type);
+                m.put("name", name);
+                m.put("cfword", code);
+                m.put("number", card);
+                m.put("ct", phone);
+                m.put("cs", length);
+                m.put("cw", weight);
+                m.put("cv", volume);
+                m.put("grand", brand);
+                m.put("info", remarks);
+                return m;
+            }
+
+        });
 
     }
 
@@ -415,7 +523,21 @@ public class RegistActivity extends BaseActivity {
         };
 
     }
+    private Response.Listener<String> coderesponseListener() {
+        return new Response.Listener<String>() {
+            @Override
+            public void onResponse(String s) {
+                if (s.equals("1")){
+                    Toast.makeText(RegistActivity.this, "成功产生验证码，请检查短信", Toast.LENGTH_SHORT)
+                            .show();
+                }else{
+                    Toast.makeText(RegistActivity.this, "验证码失败，60秒后才能再次发送", Toast.LENGTH_SHORT)
+                            .show();
+                }
+            }
+        };
 
+    }
     private Response.Listener<String> modelresponseListener() {
         return new Response.Listener<String>() {
             @Override
@@ -426,8 +548,8 @@ public class RegistActivity extends BaseActivity {
                 String str;
                 try {
                     obj = new JSONObject(s);
-                    int num ;
-                    if(obj.getInt("brandnum")!=0) {
+                    int num;
+                    if (obj.getInt("brandnum") != 0) {
                         num = obj.getInt("brandnum");
                         JSONArray objArray = obj.getJSONArray("brand");
                         for (int i = 0; i < num; i++) {
@@ -435,28 +557,69 @@ public class RegistActivity extends BaseActivity {
                             brandArray.add(obj.getString("brand"));
                             brandAdapter.notifyDataSetChanged();
                         }
-                    }else{
+                    } else {
                         brandArray.add(" ");
                         brandAdapter.notifyDataSetChanged();
                     }
-                }catch (JSONException e){
+                } catch (JSONException e) {
                     e.printStackTrace();
                 }
             }
         };
     }
 
-    private Response.Listener<String> brandresponseListener() {
-        return new Response.Listener<String>() {
 
+    @Override
+    public void onItemSelected(AdapterView<?> parent, View view, int position,
+                               long id) {
+        type_photo.setImageResource(mImageIds[position]);
 
-            @Override
-            public void onResponse(String s) {
-
-            }
-
-
-        };
     }
 
+    @Override
+    public void onNothingSelected(AdapterView<?> parent) {
+        // TODO Auto-generated method stub
+
+    }
+
+    @Override
+    public View makeView() {
+        ImageView i = new ImageView(this);
+        i.setBackgroundColor(0xFF000000);
+        i.setScaleType(ImageView.ScaleType.FIT_CENTER);
+        i.setLayoutParams(new ImageSwitcher.LayoutParams(
+                LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT));
+        return i;
+    }
+
+    public class ImageAdapter extends BaseAdapter {
+        public ImageAdapter(Context c) {
+            mContext = c;
+        }
+
+        public int getCount() {
+            return mThumbIds.length;
+        }
+
+        public Object getItem(int position) {
+            return position;
+        }
+
+        public long getItemId(int position) {
+            return position;
+        }
+
+        public View getView(int position, View convertView, ViewGroup parent) {
+            ImageView i = new ImageView(mContext);
+
+            i.setImageResource(mThumbIds[position]);
+            i.setAdjustViewBounds(true);
+            i.setLayoutParams(new Gallery.LayoutParams(
+                    LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT));
+            return i;
+        }
+
+        private Context mContext;
+
+    }
 }

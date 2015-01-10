@@ -242,6 +242,7 @@ public class HomeFragment extends BaseFragment implements XListView.IXListViewLi
 
             String dan[] = map.get("gm").split("/");
             if(!map.get("gw").equals("")) {
+
                 holder.mWeight.setText(map.get("gw") + dan[1]);     //java.lang.ArrayIndexOutOfBoundsException: length=1; index=1
             }
             holder.mLength.setText(map.get("cs"));
