@@ -39,6 +39,33 @@
                 android:layout_height="wrap_content">
                 <view
                     class="com.aicre.wuliuapp.app.MainActivity$MyRelativeButton"
+                    android:id="@+id/lei_button_relative_second"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:paddingTop="@dimen/button_item_margin_top"
+                    android:paddingBottom="@dimen/button_item_margin_bottom"
+                    >
+                    <ImageView
+                        android:id="@+id/lei_button_second"
+                        android:src="@drawable/recommend"
+                        android:background="@null"
+                        android:layout_centerHorizontal="true"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                    <TextView
+                        android:id="@+id/lei_button_textview_recommend"
+                        android:textColor="#8f8c8c"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/lei_button_second"
+                        android:layout_centerHorizontal="true"
+                        android:textStyle="bold"
+                        android:layout_marginTop="@dimen/lei_between_text_image"
+                        android:text="首页"/>
+                </view>
+                <view
+                    class="com.aicre.wuliuapp.app.MainActivity$MyRelativeButton"
                     android:id="@+id/lei_button_relative_first"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -64,9 +91,11 @@
                         android:layout_below="@id/lei_button_first_left"
                         android:text="全部"/>
                 </view>
+
+
                 <view
                     class="com.aicre.wuliuapp.app.MainActivity$MyRelativeButton"
-                    android:id="@+id/lei_button_relative_second"
+                    android:id="@+id/lei_button_relative_third"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -74,22 +103,21 @@
                     android:paddingBottom="@dimen/button_item_margin_bottom"
                     >
                     <ImageView
-                        android:id="@+id/lei_button_second"
-                        android:src="@drawable/recommend"
-                        android:background="@null"
+                        android:id="@+id/lei_button_third"
+                        android:src="@drawable/me"
                         android:layout_centerHorizontal="true"
+                        android:background="@null"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content" />
                     <TextView
-                        android:id="@+id/lei_button_textview_recommend"
-                        android:textColor="#8f8c8c"
+                        android:id="@+id/lei_button_textview_me"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_below="@id/lei_button_second"
                         android:layout_centerHorizontal="true"
+                        android:textColor="#8f8c8c"
                         android:textStyle="bold"
-                        android:layout_marginTop="@dimen/lei_between_text_image"
-                        android:text="推荐"/>
+                        android:layout_marginTop="@dimen/lei_between_text_image" android:layout_below="@id/lei_button_third"
+                        android:text="我"/>
                 </view>
                 <view
                     class="com.aicre.wuliuapp.app.MainActivity$MyRelativeButton"
@@ -116,33 +144,7 @@
                         android:layout_height="wrap_content"
                         android:layout_centerHorizontal="true"
                         android:layout_below="@id/lei_button_forth"
-                        android:text="记录"/>
-                </view>
-                <view
-                    class="com.aicre.wuliuapp.app.MainActivity$MyRelativeButton"
-                    android:id="@+id/lei_button_relative_third"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:paddingTop="@dimen/button_item_margin_top"
-                    android:paddingBottom="@dimen/button_item_margin_bottom"
-                    >
-                    <ImageView
-                        android:id="@+id/lei_button_third"
-                        android:src="@drawable/me"
-                        android:layout_centerHorizontal="true"
-                        android:background="@null"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content" />
-                    <TextView
-                        android:id="@+id/lei_button_textview_me"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_centerHorizontal="true"
-                        android:textColor="#8f8c8c"
-                        android:textStyle="bold"
-                        android:layout_marginTop="@dimen/lei_between_text_image" android:layout_below="@id/lei_button_third"
-                        android:text="我"/>
+                        android:text="设置"/>
                 </view>
 
             </LinearLayout>

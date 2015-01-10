@@ -12,6 +12,7 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.aicre.wuliuapp.app.MainActivity;
 import com.aicre.wuliuapp.app.R;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -42,7 +43,6 @@ public class DetailActivity extends BaseActivity {
         ActionBar bar = getSupportActionBar();
         bar.setTitle("详细信息");
         bar.setDisplayHomeAsUpEnabled(true);
-
        start_detail = (TextView) findViewById(R.id.start_detail);
         finish_detail = (TextView) findViewById(R.id.finish_detail);
         name_detail = (TextView) findViewById(R.id.contact);
@@ -147,7 +147,15 @@ public class DetailActivity extends BaseActivity {
         // Handle action bar item clicks here. The action bar will
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
+        switch (item.getItemId()){
+            case android.R.id.home:
+                finish();
+                break;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
         return super.onOptionsItemSelected(item);
+
     }
 
 }

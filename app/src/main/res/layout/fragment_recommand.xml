@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:background="@color/_blue"
+        android:layout_height="70dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:layout_marginLeft="25dp"
+            android:textColor="@color/white"
+            android:textSize="19dp"
+            android:text="天气\n7-15"
+            android:layout_alignParentLeft="true"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:textSize="20dp"
+            android:text="武汉"
+            android:textColor="@color/white"
+            android:layout_marginRight="25dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:background="#f3f3f3"
+        android:layout_height="70dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:layout_marginLeft="25dp"
+            android:textSize="18dp"
+            android:textColor="@color/button_gray"
+            android:text="晨宝宝"
+            android:layout_alignParentLeft="true"
+            android:id="@+id/textView" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:textSize="18dp"
+            android:gravity="center_vertical"
+            android:textColor="@color/button_green"
+            android:text="车主"
+
+            android:layout_alignParentTop="true"
+            android:layout_toRightOf="@+id/textView"
+            android:layout_toEndOf="@+id/textView"
+            android:layout_marginLeft="3dp"
+            android:layout_marginStart="15dp" />
+        <Button
+            android:id="@+id/btn_person"
+            android:background="@drawable/btn_selector"
+            android:layout_width="wrap_content"
+            android:layout_height="25dp"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:text="个人中心"
+            android:textSize="18dp"
+            android:layout_marginRight="25dp"
+            android:layout_marginEnd="29dp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <com.aicre.wuliuapp.app.view.XListView
+            android:id="@+id/lei_x_list_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:cacheColorHint="#00000000">
+        </com.aicre.wuliuapp.app.view.XListView>
+        </RelativeLayout>
+    <!--<com.aicre.wuliuapp.app.view.XListView-->
+        <!--android:id="@+id/lei_x_list_view"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:cacheColorHint="#00000000">-->
+        <!--</com.aicre.wuliuapp.app.view.XListView>-->
+</LinearLayout>
