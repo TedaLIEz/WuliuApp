@@ -24,4 +24,7 @@ public class Globles {
     public static String UPLOAD_PIC = TEST_URL+"uppic.php";
 
     public static String GET_MODEL = TEST_URL+"select_type.php";
+    public static String IS_EXIST = TEST_URL+"is_exist.php";
+
+
 }

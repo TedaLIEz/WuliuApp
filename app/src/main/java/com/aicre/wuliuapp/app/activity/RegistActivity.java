@@ -156,6 +156,9 @@ public class RegistActivity extends BaseActivity implements OnItemSelectedListen
     private Integer[] mImageIds4 = {R.drawable.car_1, R.drawable.car_2,
             R.drawable.car_3,};
 
+
+    private int is_upload;
+    private String session_code;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -165,6 +168,8 @@ public class RegistActivity extends BaseActivity implements OnItemSelectedListen
         bar.setTitle("注册");
         bar.setIcon(R.drawable.icon);
 
+        is_upload = 0;
+        session_code = "";
         bar.setDisplayHomeAsUpEnabled(true);
 
         mViewFlipper = (ViewFlipper) findViewById(R.id.MyView);
@@ -177,7 +182,7 @@ public class RegistActivity extends BaseActivity implements OnItemSelectedListen
         regist_code = (EditText) findViewById(R.id.regist_code);
         regist_psw = (EditText) findViewById(R.id.regist_psw);
         regist_repsw = (EditText) findViewById(R.id.regist_repsw);
-        verifyBtn = (Button)findViewById(R.id.verifybtn);
+        verifyBtn = (Button) findViewById(R.id.verifybtn);
         verifyBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -321,15 +326,40 @@ public class RegistActivity extends BaseActivity implements OnItemSelectedListen
 
         switch (item.getItemId()) {
             case R.id.next1:
-                page_num++;
-                mViewFlipper.showNext();
+                if (page_num == 0) {
+                    if (regist_phone.getText().toString().equals("")) {
+                        Toast.makeText(RegistActivity.this, "手机号不能为空", Toast.LENGTH_SHORT).show();
+                    } else if (regist_code.getText().toString().equals("")) {
+                        Toast.makeText(RegistActivity.this, "验证码不能为空", Toast.LENGTH_SHORT).show();
+                    } else if (regist_psw.getText().toString().equals("")) {
+                        Toast.makeText(RegistActivity.this, "密码不能为空", Toast.LENGTH_SHORT).show();
+                    } else if (regist_repsw.getText().toString().equals("")) {
+                        Toast.makeText(RegistActivity.this, "请填入重复密码", Toast.LENGTH_SHORT).show();
+                    } else if (regist_psw.getText().toString()==regist_repsw.getText().toString()) {
+                        Toast.makeText(RegistActivity.this, "两次填入的密码不同", Toast.LENGTH_SHORT).show();
+                    } else {
+                        page_num++;
+                        mViewFlipper.showNext();
+                    }
+                } else if (page_num == 1) {
+                    if (regist_name.getText().toString().equals("")) {
+                        Toast.makeText(RegistActivity.this, "姓名不能为空", Toast.LENGTH_SHORT).show();
+                    } else if (regist_card_3.getText().toString().equals("")) {
+                        Toast.makeText(RegistActivity.this, "车牌号不能为空", Toast.LENGTH_SHORT).show();
+                    } else {
+                        page_num++;
+                        mViewFlipper.showNext();
+                    }
+                }
                 break;
             case R.id.previous1:
                 page_num--;
                 mViewFlipper.showPrevious();
                 break;
             case R.id.regist_complete:
-                uploadData();
+                if(is_upload!=0&&session_code!="") {
+                    uploadData();
+                }
                 break;
             default:
                 break;
@@ -384,14 +414,16 @@ public class RegistActivity extends BaseActivity implements OnItemSelectedListen
         type = regist_type.getSelectedItem().toString();
         length = regist_long.getText().toString();
         weight = regist_weight.getText().toString();
-        volume =regist_volume.getText().toString();
+        volume = regist_volume.getText().toString();
         brand = regist_brand.getSelectedItem().toString();
         remarks = regist_remarks.getText().toString();
+
 
         executeRequest(new String2Request(Globles.REGISTER_URL, "utf-8", responseListener(),
                 errorListener()) {
             protected Map<String, String> getParams() {
                 Map<String, String> m = new HashMap<String, String>();
+                m.put("session",session_code);
                 m.put("username", phone);
                 m.put("password", psw);
                 m.put("type", type);
@@ -523,21 +555,24 @@ public class RegistActivity extends BaseActivity implements OnItemSelectedListen
         };
 
     }
+
     private Response.Listener<String> coderesponseListener() {
         return new Response.Listener<String>() {
             @Override
             public void onResponse(String s) {
-                if (s.equals("1")){
-                    Toast.makeText(RegistActivity.this, "成功产生验证码，请检查短信", Toast.LENGTH_SHORT)
-                            .show();
-                }else{
+                if (s.equals("0")) {
                     Toast.makeText(RegistActivity.this, "验证码失败，60秒后才能再次发送", Toast.LENGTH_SHORT)
+                            .show();
+                } else {
+                    session_code = s;
+                    Toast.makeText(RegistActivity.this, "成功产生验证码，请检查短信", Toast.LENGTH_SHORT)
                             .show();
                 }
             }
         };
 
     }
+
     private Response.Listener<String> modelresponseListener() {
         return new Response.Listener<String>() {
             @Override
