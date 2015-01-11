@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Environment;
+import android.os.Message;
 import android.provider.MediaStore;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
@@ -56,7 +57,9 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.logging.Handler;
+import java.util.Timer;
+import java.util.TimerTask;
+import android.os.Handler;
 
 import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ViewSwitcher;
@@ -159,6 +162,15 @@ public class RegistActivity extends BaseActivity implements OnItemSelectedListen
 
     private int is_upload;
     private String session_code;
+
+
+    private Timer timer;
+    private TimerTask task;
+    private Handler handler;
+
+    private Runnable runnable;
+
+    private int i = 60;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -167,6 +179,25 @@ public class RegistActivity extends BaseActivity implements OnItemSelectedListen
         ActionBar bar = getSupportActionBar();
         bar.setTitle("注册");
         bar.setIcon(R.drawable.icon);
+        runnable = new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    handler.postDelayed(this, 1000);
+                    verifyBtn.setText(Integer.toString(i--)+"秒");
+
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+                if(i==0){
+                    verifyBtn.setText("发送验证码");
+                    i=60;
+                    handler.removeCallbacks(runnable);
+                }
+            }
+        };
+
+
 
         is_upload = 0;
         session_code = "";
@@ -194,7 +225,6 @@ public class RegistActivity extends BaseActivity implements OnItemSelectedListen
                             m.put("phone", regist_phone.getText().toString());
                             return m;
                         }
-
                     });
                 } else {
                     Toast.makeText(RegistActivity.this, "手机号不能为空", Toast.LENGTH_SHORT).show();
@@ -567,6 +597,7 @@ public class RegistActivity extends BaseActivity implements OnItemSelectedListen
                     session_code = s;
                     Toast.makeText(RegistActivity.this, "成功产生验证码，请检查短信", Toast.LENGTH_SHORT)
                             .show();
+                    handler.postDelayed(runnable,1000);
                 }
             }
         };
